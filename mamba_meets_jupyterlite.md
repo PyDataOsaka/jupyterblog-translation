@@ -11,7 +11,7 @@ typoや翻訳ミスを見つけましたら[こちらのリポジトリ](https:/
 Introducing a mamba-based distribution for WebAssembly, and deploying scalable computing environments with JupyterLite.
 -->
 
-WebAssemblyのためのmambaベースのディストリビューションと、Jupyterliteと共にスケーラブルな計算環境のデプロイについて紹介する。
+mambaを元にしたWebAssemblyパッケージの配布元と、スケーラブルなJupyterlite計算環境のデプロイの仕組みについて紹介する。
 
 ![JupyterLite logo](https://miro.medium.com/max/1400/1*dbJO26hiSR8EFygX1rnqrA.png)
 
@@ -23,7 +23,8 @@ Jupyterliteは何のサーバーコンポーネントも用いることなくウ
 これを実現するために、すべての言語カーネルもブラウザ内で動作しなければなりません。
 
 ![A screenshot of JupyterLite running in the Browser. One can see as Matplotlib figure and some Pandas DataFrame code. Furthermore a `p5.js` kernel instance is visible.](https://miro.medium.com/max/1400/0*MoW-XpW5yQgCxinq.png)
-*JupyterLite running in the browser as a static website*
+<!--*JupyterLite running in the browser as a static website*-->
+*ブラウザ内で静的サイトとして動作するJupyterLite*
 
 <!--
 A significant benefit of this approach is the ease of deployment. With JupyterLite, the only requirement to provide a live computing environment is a collection of static assets.
@@ -43,32 +44,103 @@ It makes it possible to embed a console or a notebook interface on any static pa
     JupyterLite is the easiest and most scalable way to embed an interactive console or notebook on a web page without any server component.
 -->
 
-    Jupyterliteはインタラクティブなコンソールやノートブックをサーバーコンポーネントなしでウェブページに埋め込むための最も簡単でスケーラブルな方法です。
+    Jupyterliteはインタラクティブなコンソールやノートブックを
+    サーバーコンポーネントなしでウェブページに埋め込むための
+    最も簡単でスケーラブルな方法です。
 
-<!-- 以下翻訳途中 -->
+<!--
+The most prominent JupyterLite kernel is the Pyolite Python kernel, which is based on the Pyodide distribution for WebAssembly.
+-->
+最も用いられているJupyterLiteカーネルはWebAssemblyに対するPyodideディストリビューションを元に構築されているPyolite Pythonカーネルです。
 
-The most prominent JupyterLite kernel is the Pyolite Python kernel, which is based on the Pyodide distribution for WebAssembly. Beyond the CPython interpreter, Pyodide includes many popular scientific computing packages such as NumPy, Pandas, and Matplotlib. Pyodide also provides a foreign function interface (FFI) that allows calling Python from JavaScript and vice versa.
+<!--
+Beyond the CPython interpreter, Pyodide includes many popular scientific computing packages such as NumPy, Pandas, and Matplotlib.
+-->
+Pyodideは単にCPythonインタプリタであるだけでなく、NumPy, Pandas, Matplotlibのような多くの科学技術計算パッケージを含んでいます。
 
+<!--
+Pyodide also provides a foreign function interface (FFI) that allows calling Python from JavaScript and vice versa.
+-->
+Pyodideはまたforeign function interface(FFI)を提供しており、FFIによってJavaScriptからPythonを呼ぶことやその逆を行うことが可能となります。
 
 ![The JupyterLite inline console embedded on the SymPy project website](https://miro.medium.com/max/1400/1*rKzDNlHO6LnhH1ZDyb996g.png)
 
-### Pyodide — and beyond
+<!--### Pyodide — and beyond -->
+### Pyodide、そしてその先へ
 
-While Pyodide provides many scientific computing packages, its monolithic distribution model does not allow to specify package versions, although versions of pure python packages installed on top can be set. Our goal is to enable the composability of computing environments allowed by package managers and to adopt the conda-forge model for large-scale software distribution crowdsourcing.
+<!--
+While Pyodide provides many scientific computing packages, its monolithic distribution model does not allow to specify package versions, although versions of pure python packages installed on top can be set.
+-->
+Pyodideは多くの科学技術計算パッケージを提供する一方で、
+そのモノリシックなディストリビューションモデルではトップレベルにインストールされるpure pythonパッケージのバージョンを設定することはできますが、パッケージのバージョンを指定することはできません。
 
-Being able to pin down package versions in an environment is a strong requirement for software reproducibility. In fact, a locked WebAssembly environment could be seen as a reproducibility time capsule. As WebAssembly is a recognized web standard, it ought to be runnable for much longer than native binary packages: these are bound to a combination of architecture and platform and will eventually require an emulator.
+<!--
+Our goal is to enable the composability of computing environments allowed by package managers and to adopt the conda-forge model for large-scale software distribution crowdsourcing.
+-->
 
+我々のゴールはパッケージマネージャによる計算環境の構成を可能とし
+大規模なソフトウェアパッケージ配布のクラウドソーシングに向けたconda-forgeのモデルを採用することです。
+
+<!--
+Being able to pin down package versions in an environment is a strong requirement for software reproducibility. 
+In fact, a locked WebAssembly environment could be seen as a reproducibility time capsule. 
+-->
+
+計算環境に特定のバージョンのパッケージを固定できることはソフトウェアにおける再現性のために強く要求されます。 
+実際に、固定されたWebAseembly環境は再現性に対するタイムカプセルとして捉えることができます。
+
+<!--
+As WebAssembly is a recognized web standard, it ought to be runnable for much longer than native binary packages: these are bound to a combination of architecture and platform and will eventually require an emulator.
+-->
+
+WebAssemblyはWeb標準化されたものとして認識されており、ネイティブバイナリパッケージよりも長く実行できるべきであると考えられています。
+つまり、アーキテクチャの組み合わせには境界が存在しており、結局のところエミュレータであることが求められます。
+
+<!--
 This is why we developed a mamba-based distribution of WebAssembly packages built with Emscripten.
+-->
+これが我々がEmscriptenを用いて構築されたWebAssemblyパッケージのmambaベースディストリビューションを開発した理由となります。
 
 ### Emscripten-forge
 
-The choice of the Mamba/Conda package manager was natural. Its main strength is the conda-forge community-maintained distribution, which has become the de facto standard source of packages for scientific computing.
+<!--
+The choice of the Mamba/Conda package manager was natural. 
+Its main strength is the conda-forge community-maintained distribution, which has become the de facto standard source of packages for scientific computing.
+-->
 
-    Beyond its solid technological foundations and the multi-platform nature of the conda-forge distribution, its main strength is its social model. It allowed for a crowdsourcing approach of the packaging problem, with a balance of separation of concerns between maintainer teams and across-the-board automation, plus an amazing maintainers community.
+Mamba/Condaパッケージマネージャを選ぶことは自然です。
+その主な強みはコミュニティによってメンテナンスされているパッケージ配布元のconda-forgeであり、
+科学技術計算パッケージのデファクトスタンダートな取得元となっています。
 
+<!--
+    Beyond its solid technological foundations and the multi-platform nature of the conda-forge distribution, 
+    its main strength is its social model.
+    It allowed for a crowdsourcing approach of the packaging problem,
+    with a balance of separation of concerns between maintainer teams and across-the-board automation,
+    plus an amazing maintainers community.
+
+    訳注: across-the-board: 全面的な
+-->
+
+    conda-forgeの主な強みは、パッケージ配布における強固な技術的基盤と
+    マルチプラットフォームな特性を持つことに加え、そのソーシャルモデルにあります。
+    パッケージに関する問題をクラウドソーシングのアプローチによって解決し、
+    メンテナチーム間での関心の分離と全面的な自動化のバランスを保つことで、
+    驚くべきメンテナコミュニティを実現しています。
+
+<!--
 We plan on contributing this work to the conda-forge project, so that all recipes live in the same space.
+-->
 
+我々はすべてのレシピが同じ空間上に存在するように、この成果をconda-forgeプロジェクトへとコントリビュートすることを予定しています。
+
+<!--
 The Mamba/Conda package manager has support for many platforms and architectures such as Linux, OS X (for both x86 and arm64), and Windows. However, the WebAssembly family of platforms is not supported yet.
+-->
+Mamba/CondaパッケージマネージャはLinux, OS X(x86とarm64の両方)、Windowsのような多くのプラットフォームとアーキテクチャをサポートしています。
+しかしながら、WebAssemblyに属するプラットフォームはまだサポートされていません。
+
+<!-- 以下翻訳途中 -->
 
 #### Adding support for WebAssembly to mamba & conda
 
