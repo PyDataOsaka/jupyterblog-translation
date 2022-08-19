@@ -35,20 +35,32 @@ Events funded in this round would occur no later than April 30, 2023. -->
 Jupyter Community Workshops では、焦点を絞ったトピックに関する影響力の大きい戦略的作業とコミュニティエンゲージメントのために Jupyter コミュニティのメンバーとコアコントリビューターの小グループが集まります。
 今ラウンドで資金提供されたイベントは、2023年4月30日までに開催されます。
 
-These workshops are expected to involve up to two dozen participants over the course of two to four days, in an in-person or virtual format.
+<!-- These workshops are expected to involve up to two dozen participants over the course of two to four days, in an in-person or virtual format.
 Depending on the format of the event, proposals may include a Jupyter-funded budget for direct expenses of up to $20,000 to reimburse in-person events or up to $5,000 for virtual events.
 Direct expenses include, for example, travel expenses, speaker promotional items, video conferencing platform, accommodation, meals and event space.
 (Please note this is not a grant with overhead or indirect costs.)
 It is our intent the workshops will include both participants who are core Jupyter contributors and stakeholders, contributors, and potential contributors within the larger Jupyter ecosystem.
 Participants should be at least 18 years old (i.e., not minors).
 While not the primary focus of the workshops, it would be highly beneficial to couple the workshop with broader community outreach events, such as sprints, talks, or tutorials at local meetings or conferences.
-For examples of recent workshops, see some [proposals funded in a recent round](https://blog.jupyter.org/jupyter-community-workshops-a7f1dca1735e).
+For examples of recent workshops, see some [proposals funded in a recent round](https://blog.jupyter.org/jupyter-community-workshops-a7f1dca1735e). -->
+これらのワークショップには、対面形式または仮想形式で、2~4日間にわたって最大20人の参加者が参加する予定です。
+イベントの形式に応じて、提案には Jupyter が資金提供する直接経費の予算 (対面イベントの場合は最大 20,000 ドル、仮想イベントの場合は最大 5,000 ドル) が含まれる場合があります。
+直接経費には、たとえば、旅費、スピーカーの宣伝用アイテム、ビデオ会議プラットフォーム、宿泊施設、食事、イベントスペースが含まれます。
+（諸経費や間接費を伴う助成ではありませんのでご注意ください。）
+ワークショップには、Jupyter のコアコントリビューターである参加者と、大きな Jupyter エコシステム内の利害関係者、コントリビューター、および潜在的なコントリビューターの両方が参加する予定です。
+参加者は 18 歳以上である必要があります (つまり、未成年者ではありません)。
+ワークショップの主要な焦点ではありませんが、ワークショップを、地域のミーティングや会議でのスプリント、講演、チュートリアルなど、より広範なコミュニティへのアウトリーチイベントと組み合わせることは非常に有益です。
+最近のワークショップの例については、[最近のラウンドで資金提供されたいくつかの提案](https://blog.jupyter.org/jupyter-community-workshops-a7f1dca1735e)を参照してください。
 
-### Proposal Process Highlights:
+<!-- ### Proposal Process Highlights: -->
+### 提案プロセスのハイライト:
 
 1. Submit initial proposal using this form by S̶u̶n̶d̶a̶y̶,̶ ̶M̶a̶y̶ ̶2̶2̶,̶ ̶2̶0̶2̶2̶ Monday, June 6, 2022 (Anywhere on Earth).
+
 2. Initial Jupyter Community Building Committee (CBC) review (up to a week). Proposal goes to CBC for initial review and feedback. Proposal is either approved or declined.
+
 3. Budget and Logistics Development (up to four weeks). Jupyter Community Events Manager will support workshop organizers, who will develop a venue/date proposal, detailed budget, event plan, and proposed list of participants.
+
 4. Final CBC review (up to a week). Proposal presented for final approval to CBC, including final budget, event details, and an estimate of the potential impact of the event. Assuming the budget included in the initial proposal is fully developed and no major changes are proposed, this period may be waived.
 
 The proposal process for these workshops is managed by the Jupyter Community Building Committee, NumFOCUS and the Jupyter Community Events Manager, Gayle Ollington (gayle@numfocus.org). Applications can be completed using the online form and are due by Sunday, May 22, 2022 (Anywhere on Earth). Events should be hosted no later than April 30, 2023.
