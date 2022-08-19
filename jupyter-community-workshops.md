@@ -30,8 +30,10 @@ If your organization would like to support this program, please contact [NumFOCU
 
 **The fourth call for proposals for Jupyter Community Workshops is open through S̶u̶n̶d̶a̶y̶,̶ ̶M̶a̶y̶ ̶2̶2̶,̶ ̶2̶0̶2̶2̶ Monday, June 6, 2022.**
 
-Jupyter Community Workshops bring together small groups of Jupyter community members and core contributors for high-impact strategic work and community engagement on focused topics.
-Events funded in this round would occur no later than April 30, 2023.
+<!-- Jupyter Community Workshops bring together small groups of Jupyter community members and core contributors for high-impact strategic work and community engagement on focused topics.
+Events funded in this round would occur no later than April 30, 2023. -->
+Jupyter Community Workshops では、焦点を絞ったトピックに関する影響力の大きい戦略的作業とコミュニティエンゲージメントのために Jupyter コミュニティのメンバーとコアコントリビューターの小グループが集まります。
+今ラウンドで資金提供されたイベントは、2023年4月30日までに開催されます。
 
 These workshops are expected to involve up to two dozen participants over the course of two to four days, in an in-person or virtual format.
 Depending on the format of the event, proposals may include a Jupyter-funded budget for direct expenses of up to $20,000 to reimburse in-person events or up to $5,000 for virtual events.
