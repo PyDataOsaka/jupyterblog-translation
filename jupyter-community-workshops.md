@@ -1,6 +1,14 @@
+![](https://miro.medium.com/max/700/1*eQGWQqYPRRDdxzlINXqpXw.jpeg)
+
 # Jupyter Community Workshops: Call for Proposals
 
 ## Call for Proposals for July 2022 — April 2023
+
+We are pleased to announce that the next call for proposals for Jupyter Community Workshops is [now open](https://forms.gle/1FsSTKaQDNJSSBDG8)!
+
+The majority of Jupyter’s work is accomplished through online collaboration;
+yet, over the years, we found value in focused in-person workshops.
+In-person events are particularly useful for tackling challenging development and design projects, growing the community of contributors, and for strengthening collaborations.
 
 Jupyter Community Workshops is a series of community-organized events to enable such gatherings.
 See examples of recent workshops [here](https://blog.jupyter.org/jupyter-community-workshops-a7f1dca1735e),
