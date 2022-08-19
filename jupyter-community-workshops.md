@@ -9,9 +9,12 @@
 <!-- We are pleased to announce that the next call for proposals for Jupyter Community Workshops is [now open](https://forms.gle/1FsSTKaQDNJSSBDG8)! -->
 Jupyter コミュニティのワークショップの次の提案募集が[始まった](https://forms.gle/1FsSTKaQDNJSSBDG8)ことをお知らせします！
 
-The majority of Jupyter’s work is accomplished through online collaboration;
+<!-- The majority of Jupyter’s work is accomplished through online collaboration;
 yet, over the years, we found value in focused in-person workshops.
-In-person events are particularly useful for tackling challenging development and design projects, growing the community of contributors, and for strengthening collaborations.
+In-person events are particularly useful for tackling challenging development and design projects, growing the community of contributors, and for strengthening collaborations. -->
+Jupyter の作業の大部分は、オンラインのコラボレーションを通じて行われます。
+それでも、何年にもわたって、人が集まる対面のワークショップに価値を見出してきました。
+対面式のイベントは、チャレンジングな開発や設計プロジェクトに取り組み、貢献者のコミュニティを成長させ、コラボレーションを強化するのに特に役立ちます。
 
 Jupyter Community Workshops is a series of community-organized events to enable such gatherings.
 See examples of recent workshops [here](https://blog.jupyter.org/jupyter-community-workshops-a7f1dca1735e),
