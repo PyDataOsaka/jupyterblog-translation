@@ -1,10 +1,13 @@
 ![](https://miro.medium.com/max/700/1*eQGWQqYPRRDdxzlINXqpXw.jpeg)
 
-# Jupyter Community Workshops: Call for Proposals
+<!-- # Jupyter Community Workshops: Call for Proposals -->
+# Jupyter コミュニティのワークショップ: 提案募集
 
-## Call for Proposals for July 2022 — April 2023
+<!-- ## Call for Proposals for July 2022 — April 2023 -->
+## 2022年7月から2023年4月までの提案募集
 
-We are pleased to announce that the next call for proposals for Jupyter Community Workshops is [now open](https://forms.gle/1FsSTKaQDNJSSBDG8)!
+<!-- We are pleased to announce that the next call for proposals for Jupyter Community Workshops is [now open](https://forms.gle/1FsSTKaQDNJSSBDG8)! -->
+Jupyter コミュニティのワークショップの次の提案募集が[始まった](https://forms.gle/1FsSTKaQDNJSSBDG8)ことをお知らせします！
 
 The majority of Jupyter’s work is accomplished through online collaboration;
 yet, over the years, we found value in focused in-person workshops.
