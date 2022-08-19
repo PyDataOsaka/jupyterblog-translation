@@ -1,24 +1,27 @@
 ![](https://miro.medium.com/max/700/1*eQGWQqYPRRDdxzlINXqpXw.jpeg)
 
 <!-- # Jupyter Community Workshops: Call for Proposals -->
-# Jupyter コミュニティのワークショップ: 提案募集
+# Jupyter Community Workshops: 提案募集
 
 <!-- ## Call for Proposals for July 2022 — April 2023 -->
 ## 2022年7月から2023年4月までの提案募集
 
 <!-- We are pleased to announce that the next call for proposals for Jupyter Community Workshops is [now open](https://forms.gle/1FsSTKaQDNJSSBDG8)! -->
-Jupyter コミュニティのワークショップの次の提案募集が[始まった](https://forms.gle/1FsSTKaQDNJSSBDG8)ことをお知らせします！
+Jupyter Community Workshops の次の提案募集が[始まった](https://forms.gle/1FsSTKaQDNJSSBDG8)ことをお知らせします！
 
 <!-- The majority of Jupyter’s work is accomplished through online collaboration;
 yet, over the years, we found value in focused in-person workshops.
 In-person events are particularly useful for tackling challenging development and design projects, growing the community of contributors, and for strengthening collaborations. -->
 Jupyter の作業の大部分は、オンラインのコラボレーションを通じて行われます。
-それでも、何年にもわたって、人が集まる対面のワークショップに価値を見出してきました。
+それでも、何年にもわたって、集中的な対面のワークショップに価値を見出してきました。
 対面式のイベントは、チャレンジングな開発や設計プロジェクトに取り組み、貢献者のコミュニティを成長させ、コラボレーションを強化するのに特に役立ちます。
 
-Jupyter Community Workshops is a series of community-organized events to enable such gatherings.
+<!-- Jupyter Community Workshops is a series of community-organized events to enable such gatherings.
 See examples of recent workshops [here](https://blog.jupyter.org/jupyter-community-workshops-a7f1dca1735e),
-and stay tuned for updates on the current round of workshops.
+and stay tuned for updates on the current round of workshops. -->
+Jupyter Community Workshops は、そのような集会を可能にする一連のコミュニティ主催のイベントです。
+最近のワークショップの例は[ここ](https://blog.jupyter.org/jupyter-community-workshops-a7f1dca1735e)を見てください。
+そしてワークショップの現在のラウンドの最新情報にご期待ください。
 
 We are grateful for the initial and continuing financial support by Bloomberg and Amazon Web Services that makes our workshops possible.
 If your organization would like to support this program, please contact [NumFOCUS](https://numfocus.org/).
