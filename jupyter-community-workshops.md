@@ -23,8 +23,10 @@ Jupyter Community Workshops は、そのような集会を可能にする一連�
 最近のワークショップの例は[ここ](https://blog.jupyter.org/jupyter-community-workshops-a7f1dca1735e)を見てください。
 そしてワークショップの現在のラウンドの最新情報にご期待ください。
 
-We are grateful for the initial and continuing financial support by Bloomberg and Amazon Web Services that makes our workshops possible.
-If your organization would like to support this program, please contact [NumFOCUS](https://numfocus.org/).
+<!-- We are grateful for the initial and continuing financial support by Bloomberg and Amazon Web Services that makes our workshops possible.
+If your organization would like to support this program, please contact [NumFOCUS](https://numfocus.org/). -->
+私たちのワークショップを可能にしてくれたブルームバーグとアマゾンウェブサービスによる初期および継続的な財政支援に感謝しています。
+あなたの組織がこのプログラムを支援したい場合は、[NumFOCUS](https://numfocus.org/) までご連絡ください。
 
 **The fourth call for proposals for Jupyter Community Workshops is open through S̶u̶n̶d̶a̶y̶,̶ ̶M̶a̶y̶ ̶2̶2̶,̶ ̶2̶0̶2̶2̶ Monday, June 6, 2022.**
 
