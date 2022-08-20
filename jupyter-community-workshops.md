@@ -55,16 +55,23 @@ For examples of recent workshops, see some [proposals funded in a recent round](
 <!-- ### Proposal Process Highlights: -->
 ### 提案プロセスのハイライト:
 
-1. Submit initial proposal using this form by S̶u̶n̶d̶a̶y̶,̶ ̶M̶a̶y̶ ̶2̶2̶,̶ ̶2̶0̶2̶2̶ Monday, June 6, 2022 (Anywhere on Earth).
+<!-- 1. Submit initial proposal using this form by S̶u̶n̶d̶a̶y̶,̶ ̶M̶a̶y̶ ̶2̶2̶,̶ ̶2̶0̶2̶2̶ Monday, June 6, 2022 (Anywhere on Earth). -->
+1. このフォームを使用して最初の提案を2022年6月6日(地球上のどこでも)までに送信します。(訳注: すでに締め切りを過ぎていますがブログ記事全体の内容を日本語で伝えたいため本記事を翻訳しています。)
+<!-- 2. Initial Jupyter Community Building Committee (CBC) review (up to a week). Proposal goes to CBC for initial review and feedback. Proposal is either approved or declined. -->
+2. 最初の Jupyter Community Building Committee (CBC) のレビュー (最長で1週間)。提案は、最初のレビューとフィードバックのために CBC に送られます。提案は承認または却下されます。
+<!-- 3. Budget and Logistics Development (up to four weeks). Jupyter Community Events Manager will support workshop organizers, who will develop a venue/date proposal, detailed budget, event plan, and proposed list of participants. -->
+3. 予算とロジスティクスの開発 (最長で4週間)。Jupyter コミュニティイベントマネージャーは、ワークショップの主催者をサポートします。主催者は、会場・日付の提案、詳細な予算、イベント計画、および提案された参加者のリストを作成します。
+<!-- 4. Final CBC review (up to a week). Proposal presented for final approval to CBC, including final budget, event details, and an estimate of the potential impact of the event. Assuming the budget included in the initial proposal is fully developed and no major changes are proposed, this period may be waived. -->
+4. 最後の CBC のレビュー (最長で1週間)。最終的な予算、イベントの詳細、およびイベントの潜在的な影響の見積もりを含む、CBC への最終承認のために提出された提案。最初の提案に含まれる予算が完全に策定され、大きな変更が提案されない場合、この期間は免除される可能性があります。
 
-2. Initial Jupyter Community Building Committee (CBC) review (up to a week). Proposal goes to CBC for initial review and feedback. Proposal is either approved or declined.
-
-3. Budget and Logistics Development (up to four weeks). Jupyter Community Events Manager will support workshop organizers, who will develop a venue/date proposal, detailed budget, event plan, and proposed list of participants.
-
-4. Final CBC review (up to a week). Proposal presented for final approval to CBC, including final budget, event details, and an estimate of the potential impact of the event. Assuming the budget included in the initial proposal is fully developed and no major changes are proposed, this period may be waived.
-
-The proposal process for these workshops is managed by the Jupyter Community Building Committee, NumFOCUS and the Jupyter Community Events Manager, Gayle Ollington (gayle@numfocus.org). Applications can be completed using the online form and are due by Sunday, May 22, 2022 (Anywhere on Earth). Events should be hosted no later than April 30, 2023.
+<!-- The proposal process for these workshops is managed by the Jupyter Community Building Committee, NumFOCUS and the Jupyter Community Events Manager, Gayle Ollington (gayle@numfocus.org). -->
+これらのワークショップの提案プロセスは、Jupyter Community Building Committee、NumFOCUS、そして Jupyter Community Events Manager の Gayle Ollington (gayle@numfocus.org) によって管理されます。
+<!-- Applications can be completed using the online form and are due by Sunday, May 22, 2022 (Anywhere on Earth). -->
+申し込みはオンラインフォームを使用して達成でき、2022年5月22日 日曜日 (地球上のどこでも) に締め切られます。
+<!-- Events should be hosted no later than April 30, 2023. -->
+イベントは 2023年4月30日までに開催する必要があります。
 
 —
 
-This initiative is organized by Ana Ruvalcaba, Jason Grout, Sylvain Corlay, and Gayle Ollington.
+<!-- This initiative is organized by Ana Ruvalcaba, Jason Grout, Sylvain Corlay, and Gayle Ollington. -->
+このイニシアチブは、Ana Ruvalcaba、Jason Grout、Sylvain Corlay、そして Gayle Ollington によって組織されています。
