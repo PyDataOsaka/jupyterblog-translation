@@ -1,5 +1,7 @@
 ![](https://miro.medium.com/max/700/1*eQGWQqYPRRDdxzlINXqpXw.jpeg)
 
+この story は https://blog.jupyter.org/jupyter-community-workshops-c7491a3cca00 の日本語翻訳です。
+
 <!-- # Jupyter Community Workshops: Call for Proposals -->
 # Jupyter Community Workshops: 提案募集
 
