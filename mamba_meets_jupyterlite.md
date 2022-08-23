@@ -142,16 +142,39 @@ Mamba/CondaパッケージマネージャはLinux, OS X(x86とarm64の両方)、
 
 <!-- 以下翻訳途中 -->
 
-#### Adding support for WebAssembly to mamba & conda
+<!-- #### Adding support for WebAssembly to mamba & conda -->
 
+#### mamba & condaへのWebAseemblyサポートの追加
+
+<!--
 To create conda packages for the WebAssembly platform, we relied on the Emscripten toolchain.
+-->
+WebAssemblyプラットフォームに対するcondaパッケージを作成するために、我々はEmscriptenツールチェインに頼りました。
 
-We defined a new target platform for conda-build and boa, namely wasm32-unknown-emscripten for which we use the emscripten-32 shorthand name. We then associated the Emscripten compiler, wrapped in a conda package as the C/C++ compiler for this new target.
+<!--
+We defined a new target platform for conda-build and boa, namely wasm32-unknown-emscripten for which we use the emscripten-32 shorthand name.
+We then associated the Emscripten compiler, wrapped in a conda package as the C/C++ compiler for this new target.
+-->
+我々はcondaとboaに対して、emscripten-32を省略した名称であるwasm32-unknown-emscriptenと呼ばれる新しいターゲットプラットフォームを定義しました。
+そして、我々はこの新しいターゲットに対するC/C++コンパイラとしてcondaパッケージ内に内包される、Emscriptenコンパイラを関連付けました。
+
+<!--
 This already allowed us to build many packages, including simple libraries like bzip2 and zlib, but also more complex packages like Python.
-For Python extension modules we used crossenv which can create virtual environments for cross-compiling, and cross-python which integrates crossenv into conda. All the code and recipes for cross-compilation are hosted on the emscripten-forge GitHub repository.
+For Python extension modules we used crossenv which can create virtual environments for cross-compiling, and cross-python which integrates crossenv into conda.
+-->
+これはbzip2やzlibなどのような単純なライブラリだけでなく、Pythonのようなより複雑なパッケージを含む多くのパッケージをビルドすることを既に可能としています。
+Python拡張モジュールに対しては、我々はクロスコンパイルのための仮想環境を作成可能なcrossenvを用い、crossenvをcondaへと統合するためのcross-pythonを用いました。
+
+<!--
+All the code and recipes for cross-compilation are hosted on the emscripten-forge GitHub repository.
 We then used GitHub actions to build packages with Emscripten and upload them to a package server.
 Packages are hosted on a deployment of the Quetz open-source server.
 With this, you can easily create an environment for the emscripten-32 target:
+-->
+クロスコンパイルのための全てのコードとレシピはemscripten-forgeのGitHuリポジトリにホストされています。
+そして、我々はGitHub actionsをEmscriptenを用いたパッケージビルドのために用いそれらをパッケージサーバーへとアップロードします。
+パッケージはQuetzオープンソースサーバのデプロイメント上にホストされます。
+これがあれば、ユーザーはemscripten-32ターゲットに対する環境を簡単に構築することができるようになります。
 
 ```sh
 micromamba create -n my-env --platform=emscripten-32 \ 
@@ -160,7 +183,10 @@ micromamba create -n my-env --platform=emscripten-32 \
     python ipython numpy jedi
 ```
 
+<!--
 Note that we not only added emscripten-forge as a channel, but also conda-forge. This means all noarch packages can be used.
+-->
+我々はemscripten-forgeをchannelとして追加しただけでなく、conda-forgeとしても追加したことに注意してください。これは全てのnoarchパッケージが使用可能となることを意味します。
 
 #### Adding new packages to the emscripten-forge channel
 
