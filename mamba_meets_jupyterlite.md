@@ -188,36 +188,95 @@ Note that we not only added emscripten-forge as a channel, but also conda-forge.
 -->
 我々はemscripten-forgeをchannelとして追加しただけでなく、conda-forgeとしても追加したことに注意してください。これは全てのnoarchパッケージが使用可能となることを意味します。
 
+<!--
 #### Adding new packages to the emscripten-forge channel
+-->
+#### 新しいパッケージのemscripten-forgeチャンネルへの追加
 
+<!--
 Adding new packages is a simple procedure:
+-->
+新しいパッケージを追加することは単純な手続きです:
 
+<!--
 * fork the repository https://github.com/emscripten-forge/recipes
 * create a folder for your package in recipes/recipes_emscripten/<my_package>
 * add a recipe.yaml for your package in recipes/recipes_emscripten/<your_package>
 * create a pull request containing the recipe. Once the pull request is merged, the package is automatically uploaded to the emscripten-forge channel.
+-->
+* リポジトリをforkする https://github.com/emscripten-forge/recipes
+* パッケージに対するフォルダを recipes/recipes_emscripten/<my_package> に作成する
+* パッケージに対してrecipe.yamlを recipes/recipes_emscripten/<your_package> の中に追加する
+* レシピを含むプルリクエストを作成する。プルリクエストがマージされると、パッケージは自動的にemscripten-forgeチャンネルにアップロードされる
 
+<!--
 #### Integration with JupyterLite
+-->
+#### JupyterLiteとの統合
 
-Even though this is a general-purpose conda-based distribution for Emscripten packages, we had one particular application in mind for this first iteration: JupyterLite. The existing Pyolite kernel is too tightly coupled with the Pyodide distribution, so we decided to go with xeus-python instead.
+<!--
+Even though this is a general-purpose conda-based distribution for Emscripten packages, we had one particular application in mind for this first iteration: JupyterLite. 
+The existing Pyolite kernel is too tightly coupled with the Pyodide distribution, so we decided to go with xeus-python instead.
+-->
+Emscriptenパッケージをcondaベースで配布することは一般的な目的に向けたものですが、
+当初から特定のアプリケーション:Jupyterliteについても気に留めていました。
+既存のPyoliteカーネルはPyodideディストリビューションと非常に密接に結合しているため、我々はxeus-pythonを用いることに決定しました。
 
-The main reason for picking xeus-python (over ipykernel) is that with xeus-based kernels, it is possible to override the communication layer of the kernel (switching e.g. from ZMQ to HTTP/2). In the case of JupyterLite, the implementation simply relies on direct JavaScript function calls.
+<!--
+The main reason for picking xeus-python (over ipykernel) is that with xeus-based kernels, it is possible to override the communication layer of the kernel (switching e.g. from ZMQ to HTTP/2). 
+In the case of JupyterLite, the implementation simply relies on direct JavaScript function calls.
+-->
+(ipykernelではなく)xeus-pythonを選ぶ主な理由はxeusベースのカーネルがあれば、カーネルのコミュニケーション層をオーバーライドすることが可能となるからです(例えばZMQからHTTP/2への切り替え)。
+Jupyterliteの場合においては、実装は単純に直接的なJavaScriptの関数呼び出しに依存します。
 
+<!--
 You can check out our earlier blog post for more details on the JupyterLite xeus-based kernels.
+-->
+Jupyterliteのxeusベースのカーネルについての詳細は過去のブログ記事をチェックしてみてください。
 
+<!--
 #### Providing a complete Python development experience
+-->
+#### 完全なPythonでの開発体験の提供
 
-Some remaining intrinsic limitations to the WebAssembly platform need to be worked around to provide a complete experience to end-users. For example, sockets cannot be created in WebAssembly, preventing the use of the default asyncio event loop implementation. Luckily, the Pyodide authors developed a custom asyncio event-loop called WebLoop: it wraps the browser event loop using the Python — JavaScript foreign function interface (FFI) provided with Pyodide.
+<!--
+Some remaining intrinsic limitations to the WebAssembly platform need to be worked around to provide a complete experience to end-users. 
+For example, sockets cannot be created in WebAssembly, preventing the use of the default asyncio event loop implementation. 
+Luckily, the Pyodide authors developed a custom asyncio event-loop called WebLoop: it wraps the browser event loop using the Python — JavaScript foreign function interface (FFI) provided with Pyodide.
+-->
+WebAssemblyプラットフォームに残っている制限としてエンドユーザーに完全な体験を提供するためのワークアラウンドが必要となることがあります。
+例えば、socketはWebAssemblyでは作ることができず、デフォルトのasyncioのイベントループの実装を使うことを妨げます。
+幸運なことに、Pyodideの著者達はWebLoopと呼ばれるカスタム版のasyncioのイベントループを開発しました、これはPyodideによって提供されるPython-JavaScriptのforeign function interface(FFI)を用いてブラウザのイベントループをラップしたものです。
 
+<!--
 #### Pyjs:
+-->
+#### Pyjsとは
 
+<!--
 Since it is non-trivial to extract Pyodide’s FFI and use it for other projects, we created a modern Python - JavaScript FFI from scratch. This was done with the following tricks:
+-->
+PyodideのFFIを抽出し他のプロジェクトで用いることは簡単ではないため、我々はモダンなPython-JavaScript FFIをスクラッチから実装しました。
+これは次のトリックによって実現されています。
 
+<!--
 * Pybind11 is used to call Python from C++ and vice versa,
 * Embind is used to call JavaScript from C++ and vice versa.
+-->
+* C++からPythonを呼び出すため、またはその逆を行うためにPybind11が用いられます
+* C++からJavaScriptを呼び出すため、またはその逆を行うためにEmbindが用いられます 
 
-When we use Pybind11 and Embind together we can call Python from JavaScript and vice versa, with C++ as a man in the middle. This not only allows us to write a simple FFI from scratch with relatively little code but also avoids calling any low-level CPython APIs and enables using high-level constructs — like pybind11::object and emscripten::val— instead.
-The code is available in the pyjs repository. The API is very similar to Pyodide’s so that it can be used as a drop-in replacement in code, like Pyodide’s WebLoop implementation.
+<!--
+When we use Pybind11 and Embind together we can call Python from JavaScript and vice versa, with C++ as a man in the middle. 
+This not only allows us to write a simple FFI from scratch with relatively little code but also avoids calling any low-level CPython APIs 
+and enables using high-level constructs — like pybind11::object and emscripten::val— instead.
+The code is available in the pyjs repository. 
+The API is very similar to Pyodide’s so that it can be used as a drop-in replacement in code, like Pyodide’s WebLoop implementation.
+-->
+Pybind11とEmbindを同時に用いる時、C++を中間に挟むことによって、我々はJavaScriptからPythonを呼び出すことやその逆が可能となります。
+これはシンプルはFFIを相対的に少量のコードでスクラッチから書くことを可能とするだけでなく、低レベルなCPython APIの呼び出しを避けることができ、その代わりにpybind11::objectやemscripten::valのような高レベルな構成要素を用いることを可能とします。
+このコードはpyjsリポジトリで使用可能です。
+APIはPyodideのものと非常に似通っており、そのためコード中でPyodideのWebLoop実装と同じように代替として用いることが可能です。
 
 #### Deployment:
 
