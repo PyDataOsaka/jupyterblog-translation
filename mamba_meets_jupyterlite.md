@@ -278,9 +278,19 @@ Pybind11とEmbindを同時に用いる時、C++を中間に挟むことによっ
 このコードはpyjsリポジトリで使用可能です。
 APIはPyodideのものと非常に似通っており、そのためコード中でPyodideのWebLoop実装と同じように代替として用いることが可能です。
 
+<!--
 #### Deployment:
+-->
+#### デプロイ方法:
 
-The xeus-python-kernel allows conda packages to be pre-installed in the Python runtime. This can be done by passing the XeusPythonEnv.packages CLI option to jupyter lite build. The following command will install NumPy, Matplotlib, and ipyleaflet:
+<!--
+The xeus-python-kernel allows conda packages to be pre-installed in the Python runtime. 
+This can be done by passing the XeusPythonEnv.packages CLI option to jupyter lite build. 
+The following command will install NumPy, Matplotlib, and ipyleaflet:
+-->
+xeus-pythonカーネルはcondaパッケージをPythonランタイム内にプリインストールすることを可能とします。
+これはXuesPythonEnv.packagesのCLIオプションをjupyter liteのビルド時に与えることによって実現されます。
+次のコマンドはNumPY, Matplotlib, ipyleafletをインストールする例です。 
 
 ```sh
 jupyter lite build --XeusPythonEnv.packages=\
@@ -289,23 +299,51 @@ jupyter lite build --XeusPythonEnv.packages=\
     ipyleaflet
 ```
 
+<!--
 xeus-python kernel with the ipyleaflet widget visible.
+-->
+xeus-pythonカーネルを用いてipyleafletウィジェットが可視化されている例。
 
 ![Running the xeus-python kernel with the ipyleaflet widget in JupyterLite](https://miro.medium.com/max/1400/1*JCiZIwwkFen5kwEA2rK4SA.png)
 
+<!--
 More details can be found in the xeus-python-kernel GitHub repository.
+-->
+xeus-python-kernelのGitHubリポジトリに更なる詳細が載っています。
 
+<!--
 ### What about the future?
+-->
+### 今後の動き
 
+<!--
 This combination of JupyterLite and Mamba has the potential to open Jupyter to millions of additional users.
-Given its scalability, ease of deployment, reproducibility, and accessibility, JupyterLite will be everywhere: countries, organizations, and schools that don't have access to sovereign cloud infrastructure will be able to deploy Jupyter-based education platforms on servers that they truly own, without endangering the data of their students or becoming too reliant on resources that they do not control.
+Given its scalability, ease of deployment, reproducibility, and accessibility, JupyterLite will be everywhere: 
+countries, organizations, and schools that don't have access to sovereign cloud infrastructure will be able to deploy Jupyter-based education platforms on servers that they truly own, 
+without endangering the data of their students or becoming too reliant on resources that they do not control.
+-->
+JupyterLiteとMambaの連携は更に何百万人ものユーザーにJupyterを使用してもらう潜在的な可能性を秘めています。
+そのスケーラビリティと、デプロイの容易性、再現性、そしてアクセシビリティがあれば、
+JupyterLiteはあらゆる場所で活用されるでしょう。
+つまり、国、組織、学校などの独立したクラウドインフラストラクチャへのアクセスができないあらゆる場所では、
+生徒のデータを危険に晒したり、生徒が制御できないリソースに依存し過ぎることなく、
+実際に所有するサーバー上にJupyterベースの教育プラットフォームを展開することが可能となるでしょう。
 
+<!--
 #### In the short term, we are working on the following "next steps":
+-->
+#### 「次のステップ」として取り組んでいる項目の要約
 
+<!--
 * Mambalite: To support the installation of packages at runtime. Similar to Pyodide’s pip-lite, it will allow downloading packages at runtime.
 * Fortran: Compiling Fortran code with Emscripten is currently not supported, but it is necessary for key packages like SciPy. Pyodide relies on f2c, a Fortran-to-C converter, in conjunction with a set of patches to compile Fortran code with Emscripten. We are working on a more direct approach: compiling SciPy natively with LFortran.
 * Binderlite: Binder converts a repository of notebooks into an executable JupyterLab environment, making code immediately reproducible by anyone, anywhere. Emscripten-forge is the missing piece to build BinderLite, a version of Binder relying on JupyterLite instances instead of vanilla JupyterLab instances.
 * Rust/PyO3 support: We are working on integrating the work of the Pyodide team on Rust/PyO3 support in emscripten-forge. This will be important to build Rust extension modules like cryptography.
+-->
+* Mambalite: ランタイム上でのパッケージインストールのサポート。Pyodideのpip-liteと同様に、ランタイム上でパッケージ上をダウンロードすることを可能とする。
+* Fortran: Emscripteを用いてFortranのコードをコンパイルすることは現在サポートされていないが、SciPyのようなキーとなるパッケージで必要不可欠である。PyodideはFortranをCへと変換するコンバータのf2cに依存しており、FortranのコードをEmscriptenでコンパイルするためのパッチの集合を用いている。我々はより直接的な、SciPyをLFortranを用いてコンパイルするアプローチを試している。 
+* Binderlite: Binderはnotebookを含むリポジトリをJupyterLab環境上で実行できるように変換し、コードを即座に誰にでも、どこででも再現可能とするためのものである。Emscripten-forgeは素のJupyterLiteインスタンスの代わりにJupyterLiteに依存するバージョンのBinderである、BinderLiteがピースとして欠けている。
+* Rust/PyO3サポート: 我々はPyodideチームのRust/PyO3サポートに関する成果をemscripten-forgeへと統合することを進めている。これはRustで書かれたcryptograpyのような拡張モジュールをビルドする上で重要となるでしょう。
 
 ### Credits
 
