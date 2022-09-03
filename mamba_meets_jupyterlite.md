@@ -345,27 +345,47 @@ JupyterLiteはあらゆる場所で活用されるでしょう。
 * Binderlite: Binderはnotebookを含むリポジトリをJupyterLab環境上で実行できるように変換し、コードを即座に誰にでも、どこででも再現可能とするためのものである。Emscripten-forgeは素のJupyterLiteインスタンスの代わりにJupyterLiteに依存するバージョンのBinderである、BinderLiteがピースとして欠けている。
 * Rust/PyO3サポート: 我々はPyodideチームのRust/PyO3サポートに関する成果をemscripten-forgeへと統合することを進めている。これはRustで書かれたcryptograpyのような拡張モジュールをビルドする上で重要となるでしょう。
 
+<!--
 ### Credits
+-->
+### クレジット
 
+<!--
 This was built upon the work of a much bigger crowd!
+-->
+このプロジェクトは多くの方々の成果の上に成り立っています！
 
+<!--
 #### The Pyodide team
+-->
+#### Pyodideチーム
 
+<!--
 The Pyodide project was started at the Mozilla foundation by Michael Droettboom and is now maintained by Hood Chatham, Roman Yurchak, and Gyeongjae Choi.
+-->
+PyodideプロジェクトはMozilla foundationでMichale Droettboomによって始められ、今はHood Chatham, Roman Yurchak, Gyeongjae Choiらによってメンテナンスされています。
 
-The foundational work of the Pyodide project pioneered the use of Python in the browser and made all of the rest possible, from JupyterLite to this work.
+<!-- The foundational work of the Pyodide project pioneered the use of Python in the browser and made all of the rest possible, from JupyterLite to this work. -->
+Pyodideプロジェクトが実現したブラウザ内でのPythonを使用可能にするという基盤となる成果に基づいて、Jupyterliteから今回の成果に至るまでの全ての成果が生み出されました。
 
-#### The Emscripten team
+<!-- #### The Emscripten team -->
+#### Emscriptenチーム
 
-Both Pyodide and emscripten-forge are built upon the Emscripten toolchain, which provides the foundational components to be able to meaningfully run WebAssembly programs in the browser.
+<!-- Both Pyodide and emscripten-forge are built upon the Emscripten toolchain, which provides the foundational components to be able to meaningfully run WebAssembly programs in the browser. -->
+Pyodideとemscripten-forgeの両方がEmscriptenツールチェイン上に構築され、WebAssemblyのプログラムをWebブラウザ上で意図通りに実行できるようにするための基盤となるコンポーネントを提供しています。
 
-#### The JupyterLite team
+<!-- #### The JupyterLite team -->
+#### JupyterLiteチーム
 
-The JupyterLite project was started by Jeremy Tuloup, with significant contributions from Nick Bollweg and Martin Renou.
+<!-- The JupyterLite project was started by Jeremy Tuloup, with significant contributions from Nick Bollweg and Martin Renou. -->
+JupyterLiteプロジェクトはJeremy Tuloupによって始められ、Nick BollwegとMarting Renouらから重要な貢献を受けたプロジェクトです。
 
-#### The Mamba Org team
+<!-- #### The Mamba Org team -->
+#### Mamb Orgチーム
 
-The mamba ecosystem has been instrumental in making these developments possible. We use the Quetz open-source server for hosting the packages and the Boa tool to build them. In the mamba development team, we should highlight the work of Wolf Vollprecht, Johan Mabille, Joel Lamotte, and Andreas Trawöger.
+<!-- The mamba ecosystem has been instrumental in making these developments possible. We use the Quetz open-source server for hosting the packages and the Boa tool to build them. In the mamba development team, we should highlight the work of Wolf Vollprecht, Johan Mabille, Joel Lamotte, and Andreas Trawöger. -->
+mambaのエコシステムはこれらの開発を可能にするための手段となりつつあります。
+我々はQuestzオープンソースサーバをパッケージのホスティングに利用しBoaというツールをそれらのパッケージをビルドするために用いています。mamba開発チームにおいて、我々はWolf Vollprecht, Johan Mabille, Joel Lamotte, Andreas Trawögeの成果に着目すべきです。
 
 #### The Xeus team
 
