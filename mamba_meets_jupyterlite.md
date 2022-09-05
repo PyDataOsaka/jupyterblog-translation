@@ -387,22 +387,39 @@ JupyterLiteプロジェクトはJeremy Tuloupによって始められ、Nick Bol
 mambaのエコシステムはこれらの開発を可能にするための手段となりつつあります。
 我々はQuestzオープンソースサーバをパッケージのホスティングに利用しBoaというツールをそれらのパッケージをビルドするために用いています。mamba開発チームにおいて、我々はWolf Vollprecht, Johan Mabille, Joel Lamotte, Andreas Trawögeの成果に着目すべきです。
 
-#### The Xeus team
+<!-- #### The Xeus team -->
+#### Xeusチーム
 
-The xeus project was started by Johan Mabille and Sylvain Corlay. It is at the foundation of the JupyterLite integration and helped to get all the pieces together (Xeus, Mamba, Jupyter). We should especially credit the work of Martin Renou and Thorsten Beier on this integration with JupyterLite.
+<!-- The xeus project was started by Johan Mabille and Sylvain Corlay.
+It is at the foundation of the JupyterLite integration and helped to get all the pieces together (Xeus, Mamba, Jupyter).
+We should especially credit the work of Martin Renou and Thorsten Beier on this integration with JupyterLite. -->
+XeusプロジェクトはJohan MabilleとSylvainCorlayによって始められました。
+XeusプロジェクトはJupyterLiteへの統合の基礎となり、全てのピース(Xeus, Mamba, Jupyter)をまとめ上げる役割を果たしました。
+ここではMartin RenouとThorsten BeierのJupyterLiteとの統合に関する成果を特筆すべきです。
 
-### Acknowledgment
+<!-- ### Acknowledgment -->
+### 謝辞
 
-The work of Thorsten Beier, Johan Mabille, Martin Renou, Sylvain Corlay, Wolf Vollprecht, Joel Lamotte, and Andreas Trawoger at QuantStack was funded by Bloomberg.
+Bloombergからの支援を受けているQuantStackにおけるThorsten Beier, Johan Mabille, Martin Renou, Sylvain Corlay, Wolf Vollprecht, Joel Lamotte, Andreas Trawoger らの業績に感謝します。
 
-### About the Authors
+<!-- ### About the Authors -->
+### 著者達について
 
 #### Thorsten Beier
 
-Thorsten Beier is a Scientific Software Engineer at QuantStack. Before joining QuantStack, he graduated in computer science at the University of Heidelberg and worked at the EMBL. As an open-source developer, Thorsten worked on a variety of projects, from xeus and xtensor in C++ to inferno, kipoi, ilastik, and napari-splineit in Python.
+<!-- Thorsten Beier is a Scientific Software Engineer at QuantStack.
+Before joining QuantStack, he graduated in computer science at the University of Heidelberg and worked at the EMBL. As an open-source developer, Thorsten worked on a variety of projects, from xeus and xtensor in C++ to inferno, kipoi, ilastik, and napari-splineit in Python. -->
+Thorsten BeierはQuantStackで働く科学ソフトウェアエンジニアです。
+QuantStackにジョインする前は、Heidelberg大学でコンピュータサイエンスの学位を取得しEMBLで働きました。
+オープンソース開発者として、ThorstenはC++ではxeusやxtensor、Pythonではinferno, kipoi, ilastik, napari-splineitなど、さまざまなプロジェクトに貢献しました。
 
 #### Martin Renou
 
-Martin Renou is a Scientific Software Engineer at QuantStack. Before joining QuantStack, he studied at the French Aerospace Engineering School SUPAERO. He also worked at Logilab in Paris and Enthought in Cambridge. As an open-source developer at QuantStack, Martin worked on a variety of projects, from xsimd, xtensor, and xframe in C++ to ipyleaflet and ipywebrtc in Python and JavaScript.
+<!-- Martin Renou is a Scientific Software Engineer at QuantStack. Before joining QuantStack, he studied at the French Aerospace Engineering School SUPAERO. He also worked at Logilab in Paris and Enthought in Cambridge. As an open-source developer at QuantStack, Martin worked on a variety of projects, from xsimd, xtensor, and xframe in C++ to ipyleaflet and ipywebrtc in Python and JavaScript. -->
+Martin RenouはQuantStackで働く科学ソフトウェアエンジニアです。
+QuantStackにジョインする前は、彼は仏・航空宇宙工学学校SUPAEROで学んでいました。
+彼はまたパリのLogilabで働き、ケンブリッジのEnthoughtで働きました。
+QuantStackにおけるオープンソース開発者として、MartinはC++ではxsimd, xtensor, xframe、PythonとJavaScriptではipyleafletやipywebrtcなど、さまざまなプロジェクトに貢献しました。
 
-Thanks to David Brochart, Sylvain Corlay, Wolf Vollprecht, and Jeremy Tuloup
+<!-- Thanks to David Brochart, Sylvain Corlay, Wolf Vollprecht, and Jeremy Tuloup -->
+David Brochart, Sylvain Corlay, Wolf Vollprecht, Jeremy Tuloupに感謝します。
