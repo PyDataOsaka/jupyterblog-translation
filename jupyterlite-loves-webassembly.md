@@ -1,24 +1,31 @@
-# JupyterLite:Jupyter💗WebAssembly💗Pythonの日本語訳
+# JupyterLite:Jupyter❤️WebAssembly❤️Pythonの日本語訳
 
-この記事は[JupyterLite:Jupyter💗WebAssembly💗Python](https://blog.jupyter.org/jupyterlite-jupyter-%EF%B8%8F-webassembly-%EF%B8%8F-python-f6e2e41ab3fa)の日本語翻訳記事です。
+この記事は[JupyterLite:Jupyter❤️WebAssembly❤️Python](https://blog.jupyter.org/jupyterlite-jupyter-%EF%B8%8F-webassembly-%EF%B8%8F-python-f6e2e41ab3fa)の日本語翻訳記事です。
 typoや翻訳ミスを見つけましたら[こちらのリポジトリ](https://github.com/PyDataOsaka/jupyterblog-translation)のissueから報告いただくか、当該記事に対応したmdファイルに対してプルリクエストを発行していただければと思います。
 
-## JupyterLite:Jupyter💗WebAssembly💗Python
+## JupyterLite:Jupyter❤️WebAssembly❤️Python
 
-JupyterLite is a JupyterLab distribution that runs entirely in the web browser, backed by in-browser language kernels.
+<!-- JupyterLite is a JupyterLab distribution that runs entirely in the web browser, backed by in-browser language kernels. -->
+JupyterLiteは完全にウェブブラウザ上で動作し、背後にブラウザ内で動作する言語カーネルを備えた、JupyterLabのディストリビューションです。
 
 ![](https://miro.medium.com/max/1024/1*CMvcTaLSAD5A-WHCtnIFwA.png)
 
-### Motivation
+<!-- ### Motivation -->
+### モチベーション 
 
-JupyterLite is a reboot of several attempts at making a full static Jupyter distribution that runs in the browser, without having to start the Python Jupyter Server on the host machine, usually done by running jupyter lab or jupyter notebook in a terminal.
+<!-- JupyterLite is a reboot of several attempts at making a full static Jupyter distribution that runs in the browser, without having to start the Python Jupyter Server on the host machine, usually done by running jupyter lab or jupyter notebook in a terminal. -->
+JupyterLiteは、通常はターミナルからjupyter labやjupyter notebookを実行することによって起動されるホストマシン上のPythonのJupyterサーバーを必要としない、ブラウザ内で動作する完全に静的なJupyterディストリビューションを実現する試みが再始動したものになります。
 
-The goal of the project is to provide a lightweight computing environment accessible in a matter of seconds with a single click, in a web browser, and without having to install anything on the end-user device.
+<!-- The goal of the project is to provide a lightweight computing environment accessible in a matter of seconds with a single click, in a web browser, and without having to install anything on the end-user device. -->
+プロジェクトの目標はエンドユーザーのデバイス上に何かをインストールさせる必要なく、シングルクリックで数秒のうちにアクセス可能となる軽量な計算機環境を供給することです。
 
-With in-browser distributions, there is no need to provision the execution environment in the backend. Since the application is mostly a set of static files, it scales more easily, and it is also easier to deploy.
+<!-- With in-browser distributions, there is no need to provision the execution environment in the backend. Since the application is mostly a set of static files, it scales more easily, and it is also easier to deploy. -->
+ブラウザ内で動作するディストリビューションがあれば、バックエンドに実行環境を準備する必要がなくなります。
+アプリケーションはほとんどが静的ファイルの集合であるため、より簡単にスケールさせることが可能となり、またより簡単にデプロイすることが可能となります。
 
 ![](https://miro.medium.com/max/1400/1*bR--bXsuiMIDz-D_V4BfLw.png)
-JupyterLite running in the browser as a static website on ReadTheDocs
+<!-- JupyterLite running in the browser as a static website on ReadTheDocs -->
+ReadTheDocs上の静的なウェブサイトとしてブラウザ内で動作するJupyterLite
 
 ### A full JupyterLab distribution running in the browser
 
