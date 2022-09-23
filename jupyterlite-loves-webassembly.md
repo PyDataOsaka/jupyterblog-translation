@@ -159,55 +159,85 @@ JupyterLiteにおけるプラグインベースのアーキテクチャの概要
 <!-- The modularity and flexibility of JupyterLite make it possible to easily add new kernels. For example, the Basthon kernel uses a slightly different execution model than Pyolite.  -->
 JupyterLiteのモジュール性と柔軟性は新しいカーネルを簡単に追加することを可能とします。例えば、BasthonカーネルはPyoliteとは大きく異なる実行モデルを使用します。
 
-It runs in the main UI thread so users can manipulate the main window DOM from within Python directly, while Pyolite runs in a Web Worker as a background thread. Both approaches have pros and cons, and the JupyterLite plugin system lets extension authors have full control over their kernels.
+<!-- It runs in the main UI thread so users can manipulate the main window DOM from within Python directly, while Pyolite runs in a Web Worker as a background thread.  -->
+BasthonカーネルはユーザーがメインウインドウのDOMをPythonから直接操作できるようにメインUIスレッド内で動作する一方でPyoliteはバックグラウンドスレッドとしてWeb Worker内で動作します。
 
-A prototype for running Basthon in JupyterLite is being developed in the following repository: https://framagit.org/casatir/basthon-jupyterlab/
+<!-- Both approaches have pros and cons, and the JupyterLite plugin system lets extension authors have full control over their kernels. -->
+両方のアプローチは利点もあれば欠点もあり、JupyterLiteのプラグインシステムはエクステンションの作成者にこれらのカーネルを超えた完全な制御を与えます。
+
+<!-- A prototype for running Basthon in JupyterLite is being developed in the following repository: https://framagit.org/casatir/basthon-jupyterlab/ -->
+JupyterLite内でBasthonを動作させるためのプロトタイプは https://framagit.org/casatir/basthon-jupyterlab/ のリポジトリで開発されています。
 
 ![](https://miro.medium.com/max/1400/1*mMmSo4GPx7rpxbMpyf-VAA.jpeg)
-Basthon in JupyterLite
+<!-- Basthon in JupyterLite -->
+JupyterLiteにおけるBasthon 
 
-### Deploying JupyterLite
+<!-- ### Deploying JupyterLite -->
+### JupyterLiteのデプロイ
 
-JupyterLite can easily be deployed as a static website. That’s it, no server, no complicated setup, no scalability issue. Just a plain HTTP server to serve static files to users.
+<!-- JupyterLite can easily be deployed as a static website. That’s it, no server, no complicated setup, no scalability issue. Just a plain HTTP server to serve static files to users. -->
+JupyterLiteは簡単に静的なウェブサイトとしてデプロイすることが可能です。
+つまり、サーバーや、複雑なセットアップは不要であり、スケールに関する問題も起こりません。
+ただユーザに静的ファイルを提供するための単純なHTTPサーバーがあれば良いのです。
 
-This simple approach makes it possible to use a variety of options: nginx, Binder, GitHub Pages or GitLab Pages, Vercel, Netlify, and more. It can even be deployed to ReadTheDocs, which is where the default JupyterLite demo site is hosted and continuously updated.
+<!-- This simple approach makes it possible to use a variety of options: nginx, Binder, GitHub Pages or GitLab Pages, Vercel, Netlify, and more. It can even be deployed to ReadTheDocs, which is where the default JupyterLite demo site is hosted and continuously updated. -->
+このシンプルなアプローチは(デプロイ先として)様々な選択を行うことが可能となります、例えばnginx, Binder, GitHub Pages, GitLab Pages, Vercel, Netlifyなどが考えられます。
+ReadTheDocsへとデプロイすることさえ可能であり、ReadTheDocsには(実際に)デフォルトのJupyterLiteのデモサイトがホストされ、継続的に更新されています。
 
-Many of the deployment scenarios are already documented in https://jupyterlite.readthedocs.io/en/latest/deploying.html. There is also a demo template to easily deploy a custom JupyterLite website on GitHub Pages with a single click: https://github.com/jupyterlite/demo
+<!-- Many of the deployment scenarios are already documented in https://jupyterlite.readthedocs.io/en/latest/deploying.html. There is also a demo template to easily deploy a custom JupyterLite website on GitHub Pages with a single click: https://github.com/jupyterlite/demo -->
+https://jupyterlite.readthedocs.io/en/latest/deploying.html には多くのデプロイシナリオがすでに挙げられています。
+https://github.com/jupyterlite/demo にはシングルクリックでGitHub PagesにカスタマイズされたJupyterLiteのウェブサイトを簡単にデプロイするためのデモテンプレートも存在しています。
 
-Thanks to the work by Nicholas Bollweg in this pull request, JupyterLite now offers a jupyterlite command line tool to make custom deployments much more convenient.
+<!-- Thanks to the work by Nicholas Bollweg in this pull request, JupyterLite now offers a jupyterlite command line tool to make custom deployments much more convenient. -->
+Nicholas Bollwegのこのプルリクエストにおける仕事のおかげで、JupyterLiteはカスタムデプロイを更に便利にするための今やjupyterliteコマンドラインツールを提供しています。
 
-One of the goals of JupyterLite is to let anyone build their custom distribution with the set of plugins and extensions they would like to use. For now, it requires using the jupyterlite CLI, but we can imagine having a more user-friendly way of exporting a custom JupyterLite website.
+<!-- One of the goals of JupyterLite is to let anyone build their custom distribution with the set of plugins and extensions they would like to use. For now, it requires using the jupyterlite CLI, but we can imagine having a more user-friendly way of exporting a custom JupyterLite website. -->
+JupyterLiteの目標の一つとして誰にでも使いたいプラグインやエクステンションのセットでカスタマイズしたディトリビューションをビルドできるようにするということがあります。
+今のところ、jupyterlite CLIを用いることが必要ではありますが、カスタマイズされたJupyterLiteウェブサイトをエクスポートするための更にユーザーフレンドリーな方法を想像することもできます。
 
 ![](https://miro.medium.com/max/1400/1*LL_UkItjshAzsEEDB4cI2A.png)
-A mock-up for the JupyterLite Exporter
+<!-- A mock-up for the JupyterLite Exporter -->
+JupyterLite Exporterに対するモックアップ
 
-### A wide range of use cases
+<!-- ### A wide range of use cases -->
+### 幅広いユースケース
 
-With the ease of deployment and the low barrier to entry, JupyterLite is an excellent fit for a wide range of use cases.
+<!-- With the ease of deployment and the low barrier to entry, JupyterLite is an excellent fit for a wide range of use cases. -->
+デプロイの容易さと低い参入障壁があれば、JupyterLiteは幅広いユースケースに対して素晴らしく適合します。
 
-In the educational space, it simplifies access to teaching materials and computing environments. Teachers and students can focus on the content of their classes without worrying about server deployments and monitoring.
+<!-- In the educational space, it simplifies access to teaching materials and computing environments. Teachers and students can focus on the content of their classes without worrying about server deployments and monitoring. -->
+教育の場面では、教材と計算環境へのアクセスを単純化します。
+教師と生徒はサーバーへのデプロイとモニタリングについて心配することなく授業の内容に集中することが可能となります。
 
-With JupyterLite we also hope to enable the next wave of Jupyter users and make the whole ecosystem even more accessible to newcomers and the wider community.
+<!-- With JupyterLite we also hope to enable the next wave of Jupyter users and make the whole ecosystem even more accessible to newcomers and the wider community. -->
+JupyterLiteがあれば我々はJupyterユーザの次の波が起こることも期待でき、新参者や幅広いコミュニティが全てのエコシステムに更にアクセスしやすくすることが期待できます。
 
-For simpler and smaller-scale projects, it could even help reduce the load on mybinder.org by having a “binderlite” version of JupyterLite deployed on a CDN.
+<!-- For simpler and smaller-scale projects, it could even help reduce the load on mybinder.org by having a “binderlite” version of JupyterLite deployed on a CDN. -->
+より単純で小規模なスケールのプロジェクトに対しては、CDNにデプロイされたJupyterLiteの'binderlite'バージョンを作成することによってmybinder.orgの負荷を下げることもできるものと思われます。
 
-### Try it online
+<!-- ### Try it online -->
+### オンラインで試してみよう
 
-JupyterLite can easily be tested in a web browser using the following link:
+<!-- JupyterLite can easily be tested in a web browser using the following link: -->
+JupyterLiteはウェブブラウザから次のリンクを辿ることで簡単に試すことができます。
 
 https://jupyterlite.github.io/demo
 
 ![](https://miro.medium.com/max/1024/1*CMvcTaLSAD5A-WHCtnIFwA.png)
 
-### Try it locally
+<!-- ### Try it locally -->
+### ローカルで試してみよう
 
-JupyterLite can also be used locally. First, install the CLI package with:
+<!-- JupyterLite can also be used locally. First, install the CLI package with: -->
+JupyterLiteはまたローカルで用いることもできます。
+最初に、CLIパッケージを次のようにインストールしてください。
 
 ```sh
 pip install --pre jupyterlite
 ```
 
-Then, to build the JupyterLite website and serve it locally:
+<!-- Then, to build the JupyterLite website and serve it locally: -->
+次に、JupyterLiteのウェブサイトをビルドしてローカルサーバで動作させてください。
 
 ```sh
 jupyter lite init
@@ -215,36 +245,63 @@ jupyter lite build
 jupyter lite serve
 ```
 
-Check out the documentation for more information about the jupyterlite command-line tool: https://jupyterlite.readthedocs.io/en/latest/developer-guide.html
+<!-- Check out the documentation for more information about the jupyterlite command-line tool: https://jupyterlite.readthedocs.io/en/latest/developer-guide.html -->
+jupyterliteのコマンドラインツールについては https://jupyterlite.readthedocs.io/en/latest/developer-guide.html で詳細を確認してみてください。
 
-### Next steps
+<!-- ### Next steps -->
+### 次のステップ
 
-JupyterLite is still under active development, with a lot of improvements planned for the next iterations:
+<!-- JupyterLite is still under active development, with a lot of improvements planned for the next iterations: -->
+JupyterLiteはまだまだ活発に開発されている状態であり、多くの改善が次のイテレーションで計画されています:
 
+<!--
 * Improve tooling for authoring custom in-browser kernels, reusing the JupyterLab federated (prebuilt) extension system.
 * Improve the package management story in Pyodide with mamba and the conda-forge infrastructure.
 * Reuse the JupyterLite packages in other lab-based applications such as Voilà, Gator, and the Quetz Frontend.
 * Provide more user-friendly tools to easily export a custom JupyterLite distribution.
+-->
+* ブラウザ内カーネルを作成し、JupyterLabのfederated (prebuilt) エクステンションシステムを再利用するためのツールの改良
+* mambaとconda-forgeのインフラを活用することによるPyodideにおけるパッケージ管理の仕組みの改善
+* VoilàやGator、Quetzフロントエンドといった他のlabベースのアプリケーション内でのJupyterLiteパッケージの再利用
+* 更にユーザーフレンドリでカスタマイズしたJupyterLiteディストリビューションを簡単に出力可能なツールの提供
 
-### Getting involved
+<!-- ### Getting involved -->
+### 開発への関与
 
-JupyterLite is under active development happening in:
+<!-- JupyterLite is under active development happening in: -->
+JupyterLiteは活発な開発が下記で行われています。
 
-* the main repository: https://github.com/jupyterlite/jupyterlite
-* satellite repositories (kernels, demos) in the GitHub organization: https://github.com/jupyterlite
+<!-- * the main repository: https://github.com/jupyterlite/jupyterlite -->
+<!-- * satellite repositories (kernels, demos) in the GitHub organization: https://github.com/jupyterlite -->
+* メインリポジトリ: https://github.com/jupyterlite/jupyterlite
+* GitHubオーガナイゼーション内におけるカーネルやデモなどの サテライトリポジトリ: https://github.com/jupyterlite
 
-### About the Author
+<!-- ### About the Author -->
+### 著者について
 
-Jeremy Tuloup is a Scientific Software Developer at QuantStack and a Jupyter Distinguished Contributor. Maintainer and contributor of JupyterLab, Voilà, and many projects within the Jupyter ecosystem.
+<!-- Jeremy Tuloup is a Scientific Software Developer at QuantStack and a Jupyter Distinguished Contributor. Maintainer and contributor of JupyterLab, Voilà, and many projects within the Jupyter ecosystem. -->
+Jeremy TuloupはQuantStackで働く科学技術ソフトウェア開発者でありJupyterに対する優れたコントリビュータです。
+また、 JupyterLabやVoilà、Jupyterのエコシステムに含まれる多くのプロジェクトののメンテナかつコントリビュータでもあります。
 
-### Acknowledgments
+<!-- ### Acknowledgments -->
+### 謝辞
 
-We would like to acknowledge the previous work and the contributors who have worked on exploring the idea of Python in the notebook before us: Jyve, the Iodide notebook, Basthon, and the p5 notebook. It is also worth mentioning that similar projects exist outside of the Jupyter ecosystem, such as Observable and the Starboard Notebook.
+<!-- We would like to acknowledge the previous work and the contributors who have worked on exploring the idea of Python in the notebook before us: Jyve, the Iodide notebook, Basthon, and the p5 notebook.  -->
+Jyve, Iodide notebook、Basthon、p5 notebookといった、私たちの前にノートブックにおけるPythonに関するアイデアの探求に邁進してきた過去の仕事やコントリビュータに感謝を示します。
 
-We are grateful to Nicholas Bollweg, Madhur Tandon, Martin Renou for their contributions to JupyterLite, to Roman Yurchak and team for the work on Pyodide, Romain Casati for developing the Basthon kernel.
+<!-- It is also worth mentioning that similar projects exist outside of the Jupyter ecosystem, such as Observable and the Starboard Notebook. -->
+またJupyterエコシステムの外部に存在する、ObservableやStarboard Notebookといった同様のプロジェクトについても言及する価値があります。
 
-The work on JupyterLite by Jeremy Tuloup, Madhur Tandon, and Martin Renou was funded by QuantStack.
+<!-- We are grateful to Nicholas Bollweg, Madhur Tandon, Martin Renou for their contributions to JupyterLite, to Roman Yurchak and team for the work on Pyodide, Romain Casati for developing the Basthon kernel. -->
+Nicholas Bollweg, Madhur Tandon, Martin Renou に対してJupyterLiteへのコントリビューションに感謝します。
+Roman Yurchakとそのチームに対してPyodideの成果に感謝します。
+Romain Casatiに対してBasthonカーネルの開発について感謝します。
+
+
+<!-- The work on JupyterLite by Jeremy Tuloup, Madhur Tandon, and Martin Renou was funded by QuantStack. -->
+Jeremy Tuloup, Madhur Tandon, Martin Renou によるJupyterLiteの仕事はQuantStackによる支援を受けています。
 
 ![](https://miro.medium.com/max/1400/1*UY4k_mgLml9uvyo_EKMdFA.png)
 
-Thanks to Martin Renou, David Brochart, and Sylvain Corlay
+<!-- Thanks to Martin Renou, David Brochart, and Sylvain Corlay -->
+Martin Renou, David Brochart, Sylvain Corlayに感謝します。
