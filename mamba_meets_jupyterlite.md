@@ -149,14 +149,14 @@ Mamba/CondaパッケージマネージャはLinux, OS X(x86とarm64の両方)、
 <!--
 To create conda packages for the WebAssembly platform, we relied on the Emscripten toolchain.
 -->
-WebAssemblyプラットフォームに対するcondaパッケージを作成するために、我々はEmscriptenツールチェインに頼りました。
+WebAssemblyプラットフォーム用のcondaパッケージを作成するために、我々はEmscriptenツールチェインに頼りました。
 
 <!--
 We defined a new target platform for conda-build and boa, namely wasm32-unknown-emscripten for which we use the emscripten-32 shorthand name.
 We then associated the Emscripten compiler, wrapped in a conda package as the C/C++ compiler for this new target.
 -->
 我々はcondaとboaに対して、emscripten-32を省略した名称であるwasm32-unknown-emscriptenと呼ばれる新しいターゲットプラットフォームを定義しました。
-そして、我々はこの新しいターゲットに対するC/C++コンパイラとしてcondaパッケージ内に内包される、Emscriptenコンパイラを関連付けました。
+そして、我々は Emscripten コンパイラを関連付けました。それはこの新しいターゲット用の C/C++ コンパイラとして conda パッケージに同封されています。
 
 <!--
 This already allowed us to build many packages, including simple libraries like bzip2 and zlib, but also more complex packages like Python.
@@ -171,10 +171,10 @@ We then used GitHub actions to build packages with Emscripten and upload them to
 Packages are hosted on a deployment of the Quetz open-source server.
 With this, you can easily create an environment for the emscripten-32 target:
 -->
-クロスコンパイルのための全てのコードとレシピはemscripten-forgeのGitHuリポジトリにホストされています。
-そして、我々はGitHub actionsをEmscriptenを用いたパッケージビルドのために用いそれらをパッケージサーバーへとアップロードします。
+クロスコンパイルのための全てのコードとレシピはemscripten-forgeのGitHubリポジトリにホストされています。
+そして、GitHub actionsを用いてEmscriptenでパッケージをビルドし、それらをパッケージサーバーへとアップロードします。
 パッケージはQuetzオープンソースサーバのデプロイメント上にホストされます。
-これがあれば、ユーザーはemscripten-32ターゲットに対する環境を簡単に構築することができるようになります。
+これがあれば、ユーザーはemscripten-32ターゲット用の環境を簡単に構築することができるようになります。
 
 ```sh
 micromamba create -n my-env --platform=emscripten-32 \ 
@@ -196,7 +196,7 @@ Note that we not only added emscripten-forge as a channel, but also conda-forge.
 <!--
 Adding new packages is a simple procedure:
 -->
-新しいパッケージを追加することは単純な手続きです:
+新しいパッケージを追加するのは簡単な手続きです:
 
 <!--
 * fork the repository https://github.com/emscripten-forge/recipes
@@ -244,9 +244,9 @@ Some remaining intrinsic limitations to the WebAssembly platform need to be work
 For example, sockets cannot be created in WebAssembly, preventing the use of the default asyncio event loop implementation. 
 Luckily, the Pyodide authors developed a custom asyncio event-loop called WebLoop: it wraps the browser event loop using the Python — JavaScript foreign function interface (FFI) provided with Pyodide.
 -->
-WebAssemblyプラットフォームに残っている制限としてエンドユーザーに完全な体験を提供するためのワークアラウンドが必要となることがあります。
-例えば、socketはWebAssemblyでは作ることができず、デフォルトのasyncioのイベントループの実装を使うことを妨げます。
-幸運なことに、Pyodideの著者達はWebLoopと呼ばれるカスタム版のasyncioのイベントループを開発しました、これはPyodideによって提供されるPython-JavaScriptのforeign function interface(FFI)を用いてブラウザのイベントループをラップしたものです。
+WebAssemblyプラットフォームに残っている制限としてエンドユーザーに完全な体験を提供するための応急措置が必要となることがあります。
+例えば、socket は WebAssembly では作ることができず、デフォルトの asyncio イベントループ実装を使用できません。
+幸いなことに、Pyodideの著者達はWebLoopと呼ばれるカスタム版のasyncioのイベントループを開発しました、これはPyodideによって提供されるPython-JavaScriptのforeign function interface(FFI)を用いてブラウザのイベントループをラップしたものです。
 
 <!--
 #### Pyjs:
@@ -273,8 +273,8 @@ and enables using high-level constructs — like pybind11::object and emscripten
 The code is available in the pyjs repository. 
 The API is very similar to Pyodide’s so that it can be used as a drop-in replacement in code, like Pyodide’s WebLoop implementation.
 -->
-Pybind11とEmbindを同時に用いる時、C++を中間に挟むことによって、我々はJavaScriptからPythonを呼び出すことやその逆が可能となります。
-これはシンプルはFFIを相対的に少量のコードでスクラッチから書くことを可能とするだけでなく、低レベルなCPython APIの呼び出しを避けることができ、その代わりにpybind11::objectやemscripten::valのような高レベルな構成要素を用いることを可能とします。
+Pybind11とEmbindを同時に用いる場合は、C++を中間に挟むことによって、我々はJavaScriptからPythonを呼び出すことやその逆が可能となります。
+これはシンプルなFFIを比較的少ないコードでスクラッチから書くことを可能とするだけでなく、低レベルなCPython APIの呼び出しを避けることができ、その代わりにpybind11::objectやemscripten::valのような高レベルな構成要素を用いることを可能とします。
 このコードはpyjsリポジトリで使用可能です。
 APIはPyodideのものと非常に似通っており、そのためコード中でPyodideのWebLoop実装と同じように代替として用いることが可能です。
 
@@ -288,9 +288,9 @@ The xeus-python-kernel allows conda packages to be pre-installed in the Python r
 This can be done by passing the XeusPythonEnv.packages CLI option to jupyter lite build. 
 The following command will install NumPy, Matplotlib, and ipyleaflet:
 -->
-xeus-pythonカーネルはcondaパッケージをPythonランタイム内にプリインストールすることを可能とします。
-これはXuesPythonEnv.packagesのCLIオプションをjupyter liteのビルド時に与えることによって実現されます。
-次のコマンドはNumPY, Matplotlib, ipyleafletをインストールする例です。 
+xeus-python-kernelはcondaパッケージをPythonランタイム内にプリインストールすることを可能とします。
+これはXuesPythonEnv.packagesのCLIオプションをjupyter liteのビルド時に渡すことによって行えるようになります。
+次のコマンドはNumPy, Matplotlib, ipyleafletをインストールします。 
 
 ```sh
 jupyter lite build --XeusPythonEnv.packages=\
@@ -314,7 +314,7 @@ xeus-python-kernelのGitHubリポジトリに更なる詳細が載っていま�
 <!--
 ### What about the future?
 -->
-### 今後の動き
+### その将来はどうなるのか?
 
 <!--
 This combination of JupyterLite and Mamba has the potential to open Jupyter to millions of additional users.
@@ -323,10 +323,10 @@ countries, organizations, and schools that don't have access to sovereign cloud 
 without endangering the data of their students or becoming too reliant on resources that they do not control.
 -->
 JupyterLiteとMambaの連携は更に何百万人ものユーザーにJupyterを使用してもらう潜在的な可能性を秘めています。
-そのスケーラビリティと、デプロイの容易性、再現性、そしてアクセシビリティがあれば、
+そのスケーラビリティと、デプロイの容易さ、再現性、そしてアクセシビリティがあれば、
 JupyterLiteはあらゆる場所で活用されるでしょう。
-つまり、国、組織、学校などの独立したクラウドインフラストラクチャへのアクセスができないあらゆる場所では、
-生徒のデータを危険に晒したり、生徒が制御できないリソースに依存し過ぎることなく、
+つまり、独立したクラウドインフラストラクチャへのアクセスができない国、組織、学校は、
+生徒のデータを危険に晒したり、生徒がコントロールしないリソースに依存し過ぎることなく、
 実際に所有するサーバー上にJupyterベースの教育プラットフォームを展開することが可能となるでしょう。
 
 <!--
@@ -340,15 +340,15 @@ JupyterLiteはあらゆる場所で活用されるでしょう。
 * Binderlite: Binder converts a repository of notebooks into an executable JupyterLab environment, making code immediately reproducible by anyone, anywhere. Emscripten-forge is the missing piece to build BinderLite, a version of Binder relying on JupyterLite instances instead of vanilla JupyterLab instances.
 * Rust/PyO3 support: We are working on integrating the work of the Pyodide team on Rust/PyO3 support in emscripten-forge. This will be important to build Rust extension modules like cryptography.
 -->
-* Mambalite: ランタイム上でのパッケージインストールのサポート。Pyodideのpip-liteと同様に、ランタイム上でパッケージ上をダウンロードすることを可能とする。
-* Fortran: Emscripteを用いてFortranのコードをコンパイルすることは現在サポートされていないが、SciPyのようなキーとなるパッケージで必要不可欠である。PyodideはFortranをCへと変換するコンバータのf2cに依存しており、FortranのコードをEmscriptenでコンパイルするためのパッチの集合を用いている。我々はより直接的な、SciPyをLFortranを用いてコンパイルするアプローチを試している。 
-* Binderlite: Binderはnotebookを含むリポジトリをJupyterLab環境上で実行できるように変換し、コードを即座に誰にでも、どこででも再現可能とするためのものである。Emscripten-forgeは素のJupyterLiteインスタンスの代わりにJupyterLiteに依存するバージョンのBinderである、BinderLiteがピースとして欠けている。
-* Rust/PyO3サポート: 我々はPyodideチームのRust/PyO3サポートに関する成果をemscripten-forgeへと統合することを進めている。これはRustで書かれたcryptograpyのような拡張モジュールをビルドする上で重要となるでしょう。
+* Mambalite: ランタイム上でのパッケージインストールのサポート。Pyodideのpip-liteと同様に、ランタイム上でパッケージをダウンロードすることを可能とします。
+* Fortran: Emscriptenを用いてFortranのコードをコンパイルすることは現在サポートされていませんが、SciPyのようなキーとなるパッケージで必要不可欠です。PyodideはFortranをCへと変換するコンバータのf2cに依存しており、FortranのコードをEmscriptenでコンパイルするためのパッチの集合を用いています。我々はより直接的な、SciPyをLFortranを用いてコンパイルするアプローチを試しています。 
+* Binderlite: Binderはnotebookを含むリポジトリをJupyterLab環境上で実行できるように変換し、コードを即座に誰にでも、どこででも再現可能とするためのものです。普通の JupyterLab インスタンスの代わりに JupyterLite インスタンスに依存するバージョンの Binder となる BinderLite を構築するためピースがEmscripten-forgeには欠けています。
+* Rust/PyO3サポート: 我々はPyodideチームのRust/PyO3サポートに関する成果をemscripten-forgeへ統合することを進めています。これはcryptograpyのようなRustの拡張モジュールをビルドする上で重要となるでしょう。
 
 <!--
 ### Credits
 -->
-### クレジット
+### 功績に対する称賛
 
 <!--
 This was built upon the work of a much bigger crowd!
@@ -366,7 +366,7 @@ The Pyodide project was started at the Mozilla foundation by Michael Droettboom 
 PyodideプロジェクトはMozilla foundationでMichale Droettboomによって始められ、今はHood Chatham, Roman Yurchak, Gyeongjae Choiらによってメンテナンスされています。
 
 <!-- The foundational work of the Pyodide project pioneered the use of Python in the browser and made all of the rest possible, from JupyterLite to this work. -->
-Pyodideプロジェクトが実現したブラウザ内でのPythonを使用可能にするという基盤となる成果に基づいて、Jupyterliteから今回の成果に至るまでの全ての成果が生み出されました。
+Pyodideプロジェクトが実現したブラウザ内でPythonを使用可能にするという基盤となる成果に基づいて、Jupyterliteから今回の成果に至るまでの全ての成果が生み出されました。
 
 <!-- #### The Emscripten team -->
 #### Emscriptenチーム
@@ -381,11 +381,11 @@ Pyodideとemscripten-forgeの両方がEmscriptenツールチェイン上に構�
 JupyterLiteプロジェクトはJeremy Tuloupによって始められ、Nick BollwegとMarting Renouらから重要な貢献を受けたプロジェクトです。
 
 <!-- #### The Mamba Org team -->
-#### Mamb Orgチーム
+#### Mamba Orgチーム
 
 <!-- The mamba ecosystem has been instrumental in making these developments possible. We use the Quetz open-source server for hosting the packages and the Boa tool to build them. In the mamba development team, we should highlight the work of Wolf Vollprecht, Johan Mabille, Joel Lamotte, and Andreas Trawöger. -->
 mambaのエコシステムはこれらの開発を可能にするための手段となりつつあります。
-我々はQuestzオープンソースサーバをパッケージのホスティングに利用しBoaというツールをそれらのパッケージをビルドするために用いています。mamba開発チームにおいて、我々はWolf Vollprecht, Johan Mabille, Joel Lamotte, Andreas Trawögeの成果に着目すべきです。
+我々はQuestzオープンソースサーバをパッケージのホスティングに利用し、Boaというツールをそれらのパッケージをビルドするために用いています。mamba開発チームにおいて、我々はWolf Vollprecht, Johan Mabille, Joel Lamotte, Andreas Trawögeの成果を強調したいと思います。
 
 <!-- #### The Xeus team -->
 #### Xeusチーム
@@ -395,12 +395,12 @@ It is at the foundation of the JupyterLite integration and helped to get all the
 We should especially credit the work of Martin Renou and Thorsten Beier on this integration with JupyterLite. -->
 XeusプロジェクトはJohan MabilleとSylvainCorlayによって始められました。
 XeusプロジェクトはJupyterLiteへの統合の基礎となり、全てのピース(Xeus, Mamba, Jupyter)をまとめ上げる役割を果たしました。
-ここではMartin RenouとThorsten BeierのJupyterLiteとの統合に関する成果を特筆すべきです。
+この JupyterLite との統合における Martin Renou と Thorsten Beier の功績は特筆すべきです。
 
 <!-- ### Acknowledgment -->
 ### 謝辞
 
-Bloombergからの支援を受けているQuantStackにおけるThorsten Beier, Johan Mabille, Martin Renou, Sylvain Corlay, Wolf Vollprecht, Joel Lamotte, Andreas Trawoger らの業績に感謝します。
+QuantStack での Thorsten Beier, Johan Mabille, Martin Renou, Sylvain Corlay, Wolf Vollprecht, Joel Lamotte, Andreas Trawoger らの仕事は Bloomberg による資金援助を受けました。
 
 <!-- ### About the Authors -->
 ### 著者達について
