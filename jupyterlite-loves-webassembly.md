@@ -6,7 +6,7 @@ typoや翻訳ミスを見つけましたら[こちらのリポジトリ](https:/
 ## JupyterLite:Jupyter❤️WebAssembly❤️Python
 
 <!-- JupyterLite is a JupyterLab distribution that runs entirely in the web browser, backed by in-browser language kernels. -->
-JupyterLiteは完全にウェブブラウザ上で動作し、背後にブラウザ内で動作する言語カーネルを備えた、JupyterLabのディストリビューションです。
+JupyterLiteはブラウザ内で動作する言語カーネルに支えられた、完全にウェブブラウザ中で動作するJupyterLabのディストリビューションです。
 
 ![](https://miro.medium.com/max/1024/1*CMvcTaLSAD5A-WHCtnIFwA.png)
 
@@ -14,7 +14,7 @@ JupyterLiteは完全にウェブブラウザ上で動作し、背後にブラウ
 ### モチベーション 
 
 <!-- JupyterLite is a reboot of several attempts at making a full static Jupyter distribution that runs in the browser, without having to start the Python Jupyter Server on the host machine, usually done by running jupyter lab or jupyter notebook in a terminal. -->
-JupyterLiteは、通常はターミナルからjupyter labやjupyter notebookを実行することによって起動されるホストマシン上のPythonのJupyterサーバーを必要としない、ブラウザ内で動作する完全に静的なJupyterディストリビューションを実現する試みが再始動したものになります。
+JupyterLiteは、ブラウザ内で動作する完全な静的Jupyterディストリビューションを作る試みの仕切り直しになります。それは、通常ターミナルでjupyter labやjupyter notebookを実行することによって行われるホストマシン上のPythonのJupyterサーバーの起動を必要としません。
 
 <!-- The goal of the project is to provide a lightweight computing environment accessible in a matter of seconds with a single click, in a web browser, and without having to install anything on the end-user device. -->
 プロジェクトの目標はエンドユーザーのデバイス上に何かをインストールさせる必要なく、シングルクリックで数秒のうちにアクセス可能となる軽量な計算機環境を供給することです。
@@ -43,7 +43,7 @@ RetroLabインタフェースを備えたJupyterLite
 <!-- By reusing JupyterLab components, JupyterLite benefits from many of the upstream improvements such as new features, accessibility fixes, and upkeep improvements. 
 The recent work on real time collaboration coming in JupyterLab 3.1 and championed by Kevin Jahns, Carlos Herrero, and Eric Charles can be enabled in JupyterLite too! -->
 JupyterLabのコンポーネントを再利用することによって、JupyterLiteは新機能や、アクセシビリティの改善、メンテナンス面の改善のようなupstreamにおける多くの改善点の恩恵を受けることができます。
-Kevin Jahns, Carlos Herrero, Eric Charlesらが取り組んだJupyterLab 3.1で導入されるリアルタイムコラボレーションにおける最近の成果もJupyterLite内で有効化することができます。
+Kevin Jahns, Carlos Herrero, Eric Charles によって支援された、JupyterLab 3.1で導入されるリアルタイムコラボレーションにおける最近の成果もJupyterLite内で有効化することができます！
 
 ![](https://miro.medium.com/max/1400/1*HwMx3Fd6iICkWjjvUCtvwA.gif)
 <!-- Real Time Collaboration with JupyterLite on ReadTheDocs -->
@@ -54,11 +54,11 @@ Pyodideをバックエンドとして用いたPythonカーネルであるPyolite
 
 <!-- Pyodide consists of the CPython 3.8 interpreter compiled to WebAssembly which allows Python to run in the browser. -->
 <!-- Many popular scientific Python packages have also been compiled and made available.  -->
-PYodideはPythonがブラウザ上で動作するようにWebAssemblyへとコンパイルされたCPython 3.8(訳注: 記事執筆時)のインタプリタを含んでいます。
+PyodideはPythonがブラウザ上で動作するようにWebAssemblyへとコンパイルされたCPython 3.8(訳注: 記事執筆時)のインタプリタを含んでいます。
 多くのポピュラーな科学技術計算用のPythonパッケージについてもJupyterLiteで利用できるようにコンパイルされています。
 
 <!-- In addition, Pyodide can install any Python package with a pure Python wheel from the Python Package Index (PyPI). -->
-加えて、PyodideではPure Pythonで書かれたwheelパッケージについてはPython Package Index(PyPI)からインストールすることが可能です。
+加えて、Pyodideは全てのpure Python wheelのPythonパッケージをPython Package Index(PyPI)からインストールできます。
 
 <!-- Pyodide also includes a comprehensive foreign function interface that exposes the ecosystem of Python packages to JavaScript and the browser user interface, including the DOM, to Python. -->
 PyodideはPythonパッケージのエコシステムをJavaScriptおよびブラウザのUIへと公開するための包括的なforeign function interfaceも含んでいます。
@@ -90,7 +90,7 @@ JupyterLiteでのIPythonの使用
 ### インタラクティブな可視化
 
 <!-- Many visualizations libraries such as Altair and Plotly are also supported in JupyterLite, allowing for quick and convenient figures and plots right in the browser: -->
-AltairやPlotlyのような多くの可視化ライブラリについてもJupyterLiteでサポートされており、ブラウザで素早く便利な図やプロットを作成できます。
+AltairやPlotlyのような多くの可視化ライブラリもJupyterLiteでサポートされており、ブラウザで素早く便利な図やプロットを作成できます。
 
 ![](https://miro.medium.com/max/1400/1*SRr162bkckWsmoSMxVd2uQ.gif)
 <!-- Using Altair in JupyterLite -->
@@ -104,10 +104,10 @@ JupyterLiteでのPlotlyの図の作成
 ### Jupyterウィジェットのサポート
 
 <!-- Jupyter Widgets rely on the Custom Messages specification of the Jupyter Protocol to send messages back and forth between the kernel and the frontend. -->
-Jupyterウィジェットはカーネルとフロントエンドの間でのメッセージのやり取りのためにJupyterプロトコルにおけるカスタムメッセージ仕様に依存しています。
+Jupyterウィジェットは、カーネルとフロントエンドの間でのメッセージのやり取りのためのJupyterプロトコルのカスタムメッセージ仕様に依存しています。
 
 <!-- This pull request by Martin Renou added support for Comms in the Pyolite kernel, which enabled many of the existing core and third-party Jupyter Widgets to work out of the box in JupyterLite such as bqplot, ipyleaflet and ipycanvas. -->
-Martin RenouによるプルリクエストはPyoliteカーネルにおける通信サポートを追加し、bqplot, ipyleaflet, ipycanvasのような多くの既存のコアおよびサードパーティJupyterウィジェットをJupyterLiteですぐに使用できるようになりました。
+Martin RenouによるプルリクエストはPyoliteカーネルにおける通信サポートを追加し、bqplot, ipyleaflet, ipycanvasのような多くの既存のコアおよびサードパーティJupyterウィジェットをJupyterLiteですぐに使用できるようにしました。
 
 ![](https://miro.medium.com/max/1400/1*c1DIbxS6bZ7bHDcOTEIJfg.gif)
 <!-- JupyterLite comes with support for Jupyter Widgets -->
@@ -137,16 +137,16 @@ JupyterLiteにおけるp5.jsカーネル
 既存のJupyterのツール群と同様に、JupyterLiteは必要に応じて簡単にカスタマイズできるように設定されています。
 
 <!-- It supports the new JupyterLab prebuilt extension system added to the 3.0 release. Existing JupyterLab extensions can then easily be reused in JupyterLite too! -->
-3.0のリリースでは新しいJupyterLabのprebuiltエクステンションのサポートが追加されました。既存のJupyterLabのエクステンションは簡単にJupyterLiteでも再利用が可能です！
+3.0のリリースでは新しいJupyterLabのprebuiltエクステンションシステムのサポートが追加されました。既存のJupyterLabのエクステンションは簡単にJupyterLiteでも再利用が可能です！
 
 ![](https://miro.medium.com/max/1400/1*69CnccBrufVEEU0wqE_f7Q.gif)
 <!-- The JupyterLab Drawio extension running in JupyterLite -->
-JupyterLiteで動作するJupyterLab Drawioエクステンション
+JupyterLiteで動作するJupyterLabのDrawioエクステンション
 
 <!-- The in-browser server part of JupyterLite also follows a plugin-based approach.
 The server is a Lumino application without a shell and registers multiple plugins such as kernels, the contents manager or the sessions service.  -->
-JupyterLiteのブラウザ内におけるサーバー部はプラグインベースのアプローチを採用しています。
-サーバーはシェルを持たないLuminoアプリケーションでありカーネルやコンテンツマネージャまたはセッションサービスのような複数のプラグインを登録します。
+JupyterLiteのブラウザ内におけるサーバー部もプラグインベースのアプローチに従っています。
+そのサーバーはシェルを持たないLuminoアプリケーションであり、カーネルやコンテンツマネージャまたはセッションサービスのような複数のプラグインを登録します。
 
 <!-- This plugin-based approach makes it very convenient for deployers and site administrators to swap a plugin for another one.  For instance, they might want to swap the default contents manager that stores notebooks and files in the browser local storage with another plugin that would save them on AWS S3 instead. -->
 このプラグインベースのアプローチはデプロイ実行者やサイト管理者がプラグインを入れ替えるのにとても便利です。
@@ -157,10 +157,10 @@ JupyterLiteのブラウザ内におけるサーバー部はプラグインベー
 JupyterLiteにおけるプラグインベースのアーキテクチャの概要
 
 <!-- The modularity and flexibility of JupyterLite make it possible to easily add new kernels. For example, the Basthon kernel uses a slightly different execution model than Pyolite.  -->
-JupyterLiteのモジュール性と柔軟性は新しいカーネルを簡単に追加することを可能とします。例えば、BasthonカーネルはPyoliteとは大きく異なる実行モデルを使用します。
+JupyterLiteのモジュール性と柔軟性は新しいカーネルを簡単に追加することを可能とします。例えば、BasthonカーネルはPyoliteとは少し異なる実行モデルを使用します。
 
 <!-- It runs in the main UI thread so users can manipulate the main window DOM from within Python directly, while Pyolite runs in a Web Worker as a background thread.  -->
-BasthonカーネルはユーザーがメインウインドウのDOMをPythonから直接操作できるようにメインUIスレッド内で動作する一方でPyoliteはバックグラウンドスレッドとしてWeb Worker内で動作します。
+BasthonカーネルはユーザーがメインウインドウのDOMをPythonから直接操作できるようにメインUIスレッド内で動作します。一方でPyoliteはバックグラウンドスレッドとしてWeb Worker内で動作します。
 
 <!-- Both approaches have pros and cons, and the JupyterLite plugin system lets extension authors have full control over their kernels. -->
 両方のアプローチは利点もあれば欠点もあり、JupyterLiteのプラグインシステムはエクステンションの作成者にこれらのカーネルを超えた完全な制御を与えます。
@@ -189,11 +189,11 @@ https://jupyterlite.readthedocs.io/en/latest/deploying.html には多くのデ�
 https://github.com/jupyterlite/demo にはシングルクリックでGitHub PagesにカスタマイズされたJupyterLiteのウェブサイトを簡単にデプロイするためのデモテンプレートも存在しています。
 
 <!-- Thanks to the work by Nicholas Bollweg in this pull request, JupyterLite now offers a jupyterlite command line tool to make custom deployments much more convenient. -->
-Nicholas Bollwegのこのプルリクエストにおける仕事のおかげで、JupyterLiteはカスタムデプロイを更に便利にするための今やjupyterliteコマンドラインツールを提供しています。
+Nicholas Bollwegのこのプルリクエストにおける仕事のおかげで、今やJupyterLiteはカスタムデプロイを更に便利にするためのjupyterliteコマンドラインツールを提供しています。
 
 <!-- One of the goals of JupyterLite is to let anyone build their custom distribution with the set of plugins and extensions they would like to use. For now, it requires using the jupyterlite CLI, but we can imagine having a more user-friendly way of exporting a custom JupyterLite website. -->
-JupyterLiteの目標の一つとして誰にでも使いたいプラグインやエクステンションのセットでカスタマイズしたディトリビューションをビルドできるようにするということがあります。
-今のところ、jupyterlite CLIを用いることが必要ではありますが、カスタマイズされたJupyterLiteウェブサイトをエクスポートするための更にユーザーフレンドリーな方法を想像することもできます。
+JupyterLiteの目標の一つとして、使いたいプラグインやエクステンションのセットでカスタマイズしたディトリビューションを誰でもビルドできるようにする、ということがあります。
+今のところjupyterlite CLIを用いることが必要ではありますが、カスタマイズされたJupyterLiteウェブサイトをエクスポートする方法の、更にユーザーフレンドリーなものを想像できます。
 
 ![](https://miro.medium.com/max/1400/1*LL_UkItjshAzsEEDB4cI2A.png)
 <!-- A mock-up for the JupyterLite Exporter -->
@@ -210,10 +210,10 @@ JupyterLite Exporterに対するモックアップ
 教師と生徒はサーバーへのデプロイとモニタリングについて心配することなく授業の内容に集中することが可能となります。
 
 <!-- With JupyterLite we also hope to enable the next wave of Jupyter users and make the whole ecosystem even more accessible to newcomers and the wider community. -->
-JupyterLiteがあれば我々はJupyterユーザの次の波が起こることも期待でき、新参者や幅広いコミュニティが全てのエコシステムに更にアクセスしやすくすることが期待できます。
+JupyterLiteがあれば我々はJupyterユーザの次の波が起こることも期待でき、新規参入者や幅広いコミュニティが全てのエコシステムに更にアクセスしやすくなることが期待できます。
 
 <!-- For simpler and smaller-scale projects, it could even help reduce the load on mybinder.org by having a “binderlite” version of JupyterLite deployed on a CDN. -->
-より単純で小規模なスケールのプロジェクトに対しては、CDNにデプロイされたJupyterLiteの'binderlite'バージョンを作成することによってmybinder.orgの負荷を下げることもできるものと思われます。
+より単純で小規模なスケールのプロジェクトに対しては、CDNにデプロイされたJupyterLiteの'binderlite'バージョンを作成することによってmybinder.orgの負荷を下げることもできると思われます。
 
 <!-- ### Try it online -->
 ### オンラインで試してみよう
@@ -260,10 +260,10 @@ JupyterLiteはまだまだ活発に開発されている状態であり、多く
 * Reuse the JupyterLite packages in other lab-based applications such as Voilà, Gator, and the Quetz Frontend.
 * Provide more user-friendly tools to easily export a custom JupyterLite distribution.
 -->
-* ブラウザ内カーネルを作成し、JupyterLabのfederated (prebuilt) エクステンションシステムを再利用するためのツールの改良
+* JupyterLabのfederated (prebuilt) エクステンションシステムを再利用して、カスタムのブラウザー内カーネルを作成するためのツールの改良
 * mambaとconda-forgeのインフラを活用することによるPyodideにおけるパッケージ管理の仕組みの改善
 * VoilàやGator、Quetzフロントエンドといった他のlabベースのアプリケーション内でのJupyterLiteパッケージの再利用
-* 更にユーザーフレンドリでカスタマイズしたJupyterLiteディストリビューションを簡単に出力可能なツールの提供
+* カスタムJupyterLiteディストリビューションを簡単にエクスポートできる、よりユーザーフレンドリなツールの提供
 
 <!-- ### Getting involved -->
 ### 開発への関与
@@ -280,8 +280,8 @@ JupyterLiteは活発な開発が下記で行われています。
 ### 著者について
 
 <!-- Jeremy Tuloup is a Scientific Software Developer at QuantStack and a Jupyter Distinguished Contributor. Maintainer and contributor of JupyterLab, Voilà, and many projects within the Jupyter ecosystem. -->
-Jeremy TuloupはQuantStackで働く科学技術ソフトウェア開発者でありJupyterに対する優れたコントリビュータです。
-また、 JupyterLabやVoilà、Jupyterのエコシステムに含まれる多くのプロジェクトののメンテナかつコントリビュータでもあります。
+Jeremy TuloupはQuantStackで働く科学技術ソフトウェア開発者でありJupyterへの功績が際だったコントリビュータです。
+また、 JupyterLabやVoilà、Jupyterのエコシステムに含まれる多くのプロジェクトのメンテナかつコントリビュータでもあります。
 
 <!-- ### Acknowledgments -->
 ### 謝辞
