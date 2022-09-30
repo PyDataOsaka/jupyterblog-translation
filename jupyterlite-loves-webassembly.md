@@ -61,7 +61,7 @@ PyodideはPythonがブラウザ上で動作するようにWebAssemblyへとコ�
 加えて、Pyodideは全てのpure Python wheelのPythonパッケージをPython Package Index(PyPI)からインストールできます。
 
 <!-- Pyodide also includes a comprehensive foreign function interface that exposes the ecosystem of Python packages to JavaScript and the browser user interface, including the DOM, to Python. -->
-PyodideはPythonパッケージのエコシステムをJavaScriptおよびブラウザのUIへと公開するための包括的なforeign function interfaceも含んでいます。
+PyodideはPythonパッケージのエコシステムをJavaScriptへと公開し、DOMを含むブラウザのUIをPythonへと公開するための包括的なforeign function interfaceも含んでいます
 
 ![](https://miro.medium.com/max/1400/1*usFUmvzRo6v8TuRFQhK0uw.png)
 <!-- Pyodide: Python with the scientific stack, compiled to WebAssembly -->
