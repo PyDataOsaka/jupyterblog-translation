@@ -50,7 +50,7 @@ Kevin Jahns, Carlos Herrero, Eric Charles によって支援された、JupyterL
 ReadTheDocs上で動作するJupyterLiteにおけるリアルタイムコラボレーション
 
 <!-- ### Pyolite, a Python kernel backed by Pyodide -->
-Pyodideをバックエンドとして用いたPythonカーネルであるPyolite
+### Pyodideをバックエンドとして用いたPythonカーネルであるPyolite
 
 <!-- Pyodide consists of the CPython 3.8 interpreter compiled to WebAssembly which allows Python to run in the browser. -->
 <!-- Many popular scientific Python packages have also been compiled and made available.  -->
