@@ -296,9 +296,9 @@ jupyter lite build --XeusPythonEnv.packages=\
 <!--
 xeus-python kernel with the ipyleaflet widget visible.
 -->
-xeus-pythonカーネルを用いてipyleafletウィジェットが可視化されている例。
 
 ![Running the xeus-python kernel with the ipyleaflet widget in JupyterLite](https://miro.medium.com/max/1400/1*JCiZIwwkFen5kwEA2rK4SA.png)
+xeus-pythonカーネルを用いてipyleafletウィジェットが可視化されている例。
 
 <!--
 More details can be found in the xeus-python-kernel GitHub repository.
