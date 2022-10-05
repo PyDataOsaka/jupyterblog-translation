@@ -11,7 +11,7 @@ typoや翻訳ミスを見つけましたら[こちらのリポジトリ](https:/
 Introducing a mamba-based distribution for WebAssembly, and deploying scalable computing environments with JupyterLite.
 -->
 
-mambaをベースにしたWebAssembly用パッケージ配布と、Jupyterliteを用いたスケーラブルな計算環境のデプロイ方法について紹介する。
+mambaをベースにしたWebAssembly用パッケージの配布と、Jupyterliteを用いたスケーラブルな計算環境のデプロイ方法について紹介する。
 
 ![JupyterLite logo](https://miro.medium.com/max/1400/1*dbJO26hiSR8EFygX1rnqrA.png)
 
