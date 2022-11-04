@@ -180,7 +180,7 @@ micromamba create -n my-env --platform=emscripten-32 \
 <!--
 Note that we not only added emscripten-forge as a channel, but also conda-forge. This means all noarch packages can be used.
 -->
-我々はemscripten-forgeをchannelとして追加しただけでなく、[conda-forge](https://repo.mamba.pm/conda-forge)としても追加したことに注意してください。これは全てのnoarchパッケージが使用可能となることを意味します。
+我々はchannelとしてemscripten-forgeを追加しただけでなく、[conda-forge](https://repo.mamba.pm/conda-forge)も追加したことに注意してください。これは全てのnoarchパッケージが使用可能となることを意味します。
 
 <!--
 #### Adding new packages to the emscripten-forge channel
